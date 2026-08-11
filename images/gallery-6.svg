@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ambiance du salon">
+  <defs><linearGradient id="a6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe6d7"/><stop offset="1" stop-color="#cdb489"/></linearGradient></defs>
+  <rect width="600" height="600" fill="url(#a6)"/>
+  <rect x="200" y="120" width="200" height="260" rx="100" fill="#fbf7f0" stroke="#96743f" stroke-width="8"/>
+  <rect x="150" y="400" width="300" height="26" rx="10" fill="#45392f" fill-opacity="0.6"/>
+  <g fill="#45392f" fill-opacity="0.5">
+    <rect x="250" y="350" width="22" height="50" rx="6"/><rect x="290" y="360" width="20" height="40" rx="6"/><rect x="330" y="352" width="20" height="48" rx="6"/>
+  </g>
+</svg>
