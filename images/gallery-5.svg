@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Chignon et coiffure de mariage">
-  <defs><linearGradient id="a5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3ede3"/><stop offset="1" stop-color="#d3b98f"/></linearGradient></defs>
-  <rect width="600" height="600" fill="url(#a5)"/>
-  <g transform="translate(300,300)" fill="none" stroke="#45392f" stroke-opacity="0.5" stroke-width="9" stroke-linecap="round">
-    <circle cx="0" cy="-10" r="70"/>
-    <path d="M-70 -10 C -140 -60, -140 60, -70 40"/>
-    <path d="M70 -10 C 140 -60, 140 60, 70 40"/>
+  <rect width="600" height="600" fill="#f5efe6"/>
+  <g transform="translate(300,320)" fill="none" stroke="#1a1712" stroke-width="9" stroke-linecap="round">
+    <circle cx="0" cy="-6" r="76"/>
+    <path d="M-76 -6 C -150 -66, -150 66, -76 44"/>
+    <path d="M76 -6 C 150 -66, 150 66, 76 44"/>
   </g>
-  <g fill="#96743f" fill-opacity="0.55"><circle cx="300" cy="150" r="10"/><circle cx="330" cy="175" r="7"/><circle cx="270" cy="175" r="7"/></g>
+  <g fill="#b07d5c">
+    <circle cx="300" cy="150" r="11"/><circle cx="332" cy="176" r="8"/><circle cx="268" cy="176" r="8"/><circle cx="300" cy="196" r="6"/>
+  </g>
 </svg>

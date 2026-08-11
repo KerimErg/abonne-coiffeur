@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Portrait éditorial — Aboné Coiffeur">
+  <rect width="900" height="1120" fill="#e8ded0"/>
+  <!-- cercle d'ambiance -->
+  <circle cx="500" cy="450" r="330" fill="#ddccb7"/>
+  <!-- silhouette tête + chevelure -->
+  <path d="M250 1120
+    C300 950, 362 882, 432 802
+    C472 756, 432 730, 416 705
+    C406 690, 388 676, 372 656
+    C356 634, 344 622, 350 600
+    C356 578, 388 560, 396 520
+    C402 486, 412 470, 442 452
+    C512 414, 542 398, 610 380
+    C690 358, 732 432, 746 562
+    C766 704, 760 852, 720 1000
+    C705 1058, 700 1092, 700 1120
+    Z" fill="#1a1712"/>
+  <!-- mèches lumineuses -->
+  <g fill="none" stroke="#efe6d6" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round">
+    <path d="M560 372 C690 432, 720 656, 690 902"/>
+    <path d="M520 404 C640 476, 665 684, 640 902"/>
+    <path d="M614 400 C722 470, 737 684, 706 950"/>
+  </g>
+  <!-- accent discret : boucle d'oreille -->
+  <circle cx="452" cy="656" r="9" fill="#b07d5c"/>
+  <path d="M452 656 l0 26" stroke="#b07d5c" stroke-width="3" stroke-linecap="round"/>
+</svg>

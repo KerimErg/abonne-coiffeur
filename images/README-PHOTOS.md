@@ -7,9 +7,10 @@ compliquée n'est nécessaire.
 
 1. Préparez vos photos (format **JPG** ou **WebP** de préférence).
    - Galerie : format carré conseillé, environ **1000 × 1000 px**.
-   - Première photo de la galerie (mise en avant) : format paysage
-     **1600 × 800 px**.
-   - Photo « Le salon » : format portrait **900 × 1100 px**.
+   - Vignettes larges de la galerie (`wide`) : format paysage
+     **1600 × 900 px**.
+   - Photo « Le salon » : format portrait **900 × 1120 px**.
+   - Visuel d'accueil (hero) : format portrait **900 × 1120 px**.
 2. Déposez vos fichiers dans ce dossier `images/`.
 3. Ouvrez `js/main.js` et modifiez la liste `galleryItems` : remplacez
    chaque `src` par le nom de votre fichier, par exemple :
@@ -18,9 +19,10 @@ compliquée n'est nécessaire.
    { src: "images/mon-salon-1.jpg", alt: "Coupe dégradée", caption: "Coupe & coiffage" },
    ```
 
-4. Pour la photo « Le salon », ouvrez `index.html` et remplacez
-   `images/salon.svg` par le nom de votre fichier dans la balise
-   `<img>` correspondante.
+4. Pour la photo « Le salon » ou le visuel d'accueil, ouvrez
+   `index.html` et remplacez `images/salon.svg` (ou
+   `images/hero-portrait.svg`) par le nom de votre fichier dans la
+   balise `<img>` correspondante.
 
 ## Conseils
 
@@ -31,9 +33,10 @@ compliquée n'est nécessaire.
 - Vous pouvez ajouter autant d'entrées que vous le souhaitez dans
   `galleryItems`, la galerie s'adapte automatiquement.
 
-## Fichiers actuellement fournis (visuels temporaires élégants)
+## Fichiers actuellement fournis (illustrations élégantes)
 
-- `hero.svg`, `salon.svg` — décor d'ambiance
+- `hero-portrait.svg` — visuel d'accueil (portrait éditorial)
+- `salon.svg` — vignette « Le salon »
 - `gallery-1.svg` … `gallery-6.svg` — vignettes de la galerie
 - `favicon.svg` — icône de l'onglet du navigateur
 
