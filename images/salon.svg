@@ -1,48 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration du salon Aboné Coiffeur">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#efe6d7"/>
-      <stop offset="1" stop-color="#d8c4a3"/>
-    </linearGradient>
-    <linearGradient id="frame" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#45392f"/>
-      <stop offset="1" stop-color="#332c25"/>
-    </linearGradient>
-  </defs>
-  <rect width="800" height="1000" fill="url(#bg)"/>
-
-  <!-- Miroir -->
-  <rect x="250" y="120" width="300" height="420" rx="150" fill="#fbf7f0" stroke="#96743f" stroke-width="10"/>
-  <rect x="285" y="160" width="230" height="340" rx="115" fill="#eaddca" opacity="0.7"/>
-  <path d="M320 210 q60 40 0 260" stroke="#ffffff" stroke-opacity="0.5" stroke-width="14" fill="none" stroke-linecap="round"/>
-
-  <!-- Console -->
-  <rect x="180" y="560" width="440" height="40" rx="12" fill="url(#frame)"/>
-  <rect x="210" y="600" width="16" height="150" fill="#5a4a3a"/>
-  <rect x="574" y="600" width="16" height="150" fill="#5a4a3a"/>
-
-  <!-- Flacons -->
-  <g>
-    <rect x="300" y="500" width="34" height="60" rx="8" fill="#96743f"/>
-    <rect x="309" y="486" width="16" height="18" rx="3" fill="#45392f"/>
-    <rect x="352" y="510" width="30" height="50" rx="8" fill="#b7935b"/>
-    <rect x="360" y="498" width="14" height="16" rx="3" fill="#45392f"/>
-    <rect x="430" y="496" width="30" height="64" rx="8" fill="#7a6a52"/>
-    <rect x="438" y="484" width="14" height="16" rx="3" fill="#45392f"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Intérieur du salon Aboné Coiffeur">
+  <rect width="900" height="1120" fill="#ece3d5"/>
+  <rect x="0" y="720" width="900" height="400" fill="#e2d7c5"/>
+  <!-- miroir ovale -->
+  <ellipse cx="450" cy="360" rx="180" ry="240" fill="#f5efe6"/>
+  <ellipse cx="450" cy="360" rx="180" ry="240" fill="none" stroke="#1a1712" stroke-width="6"/>
+  <path d="M372 250 C440 300, 440 430, 388 500" stroke="#d9ccb7" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <!-- tablette -->
+  <rect x="250" y="712" width="400" height="16" rx="6" fill="#1a1712"/>
+  <!-- flacons -->
+  <rect x="352" y="648" width="34" height="64" rx="7" fill="#1a1712"/>
+  <rect x="402" y="662" width="28" height="50" rx="7" fill="#b07d5c"/>
+  <rect x="446" y="644" width="30" height="68" rx="7" fill="#8a8168"/>
+  <!-- fauteuil -->
+  <rect x="330" y="760" width="240" height="150" rx="26" fill="#1a1712"/>
+  <rect x="378" y="734" width="144" height="60" rx="22" fill="#2c2820"/>
+  <rect x="436" y="910" width="28" height="150" fill="#1a1712"/>
+  <ellipse cx="450" cy="1064" rx="120" ry="22" fill="#c8bba4"/>
+  <!-- ciseaux -->
+  <g transform="translate(690,210) rotate(18)" stroke="#1a1712" stroke-width="6" fill="none" stroke-linecap="round">
+    <circle cx="0" cy="0" r="16"/>
+    <circle cx="0" cy="44" r="16"/>
+    <path d="M11 11 L92 -44 M11 33 L92 88"/>
   </g>
-
-  <!-- Fauteuil -->
-  <g>
-    <rect x="300" y="720" width="200" height="150" rx="30" fill="url(#frame)"/>
-    <rect x="330" y="690" width="140" height="70" rx="26" fill="#5a4a3a"/>
-    <rect x="380" y="870" width="40" height="90" fill="#5a4a3a"/>
-    <ellipse cx="400" cy="965" rx="90" ry="20" fill="#332c25"/>
-  </g>
-
-  <!-- Ciseaux stylisés -->
-  <g stroke="#96743f" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.9" transform="translate(600,180) rotate(20)">
-    <circle cx="0" cy="0" r="18"/>
-    <circle cx="0" cy="48" r="18"/>
-    <path d="M12 12 L90 -50 M12 36 L90 98"/>
-  </g>
+  <circle cx="726" cy="150" r="7" fill="#b07d5c"/>
 </svg>

@@ -8,14 +8,16 @@
   /* -------- Galerie --------
      Pour afficher vos propres photos : déposez vos images dans le
      dossier /images puis remplacez « src » ci-dessous (ou ajoutez
-     de nouvelles entrées). Voir images/README-PHOTOS.md.            */
+     de nouvelles entrées). Voir images/README-PHOTOS.md.
+
+     « wide » = vignette large (2 colonnes).                        */
   var galleryItems = [
-    { src: "images/gallery-1.svg", alt: "Coupe et coiffage au salon Aboné Coiffeur", caption: "Coupe & coiffage" },
+    { src: "images/gallery-1.svg", alt: "Coupe et coiffage au salon Aboné Coiffeur", caption: "Coupe & coiffage", wide: true },
     { src: "images/gallery-2.svg", alt: "Coloration réalisée au salon", caption: "Coloration" },
     { src: "images/gallery-3.svg", alt: "Balayage et jeux de lumière", caption: "Balayage & mèches" },
-    { src: "images/gallery-4.svg", alt: "Brushing et mise en forme", caption: "Brushing" },
+    { src: "images/gallery-4.svg", alt: "Brushing et mise en forme", caption: "Brushing & soins" },
     { src: "images/gallery-5.svg", alt: "Chignon et coiffure de mariage", caption: "Chignon & mariage" },
-    { src: "images/gallery-6.svg", alt: "Ambiance chaleureuse du salon", caption: "Notre ambiance" }
+    { src: "images/gallery-6.svg", alt: "Ambiance chaleureuse du salon", caption: "Notre ambiance", wide: true }
   ];
 
   function buildGallery() {
@@ -24,8 +26,9 @@
     var frag = document.createDocumentFragment();
     galleryItems.forEach(function (item, i) {
       var fig = document.createElement("figure");
-      fig.className = "gallery-item reveal" + (i === 0 ? " wide" : "");
+      fig.className = "gallery-item reveal" + (item.wide ? " wide" : "");
       fig.setAttribute("role", "listitem");
+      fig.style.transitionDelay = (i % 4) * 70 + "ms";
 
       var img = document.createElement("img");
       img.src = item.src;
@@ -42,12 +45,19 @@
     wrap.appendChild(frag);
   }
 
-  /* -------- En-tête : ombre au défilement -------- */
+  /* -------- Léger décalage (stagger) pour les groupes -------- */
+  function applyStagger() {
+    document.querySelectorAll(".cards .card.reveal").forEach(function (el, i) {
+      el.style.transitionDelay = (i % 3) * 80 + "ms";
+    });
+  }
+
+  /* -------- En-tête : fond au défilement -------- */
   function initHeaderScroll() {
     var header = document.getElementById("siteHeader");
     if (!header) return;
     var onScroll = function () {
-      header.classList.toggle("scrolled", window.scrollY > 12);
+      header.classList.toggle("scrolled", window.scrollY > 24);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -95,9 +105,8 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (el) { io.observe(el); });
-    return io;
   }
 
   /* -------- Navigation active (scrollspy) -------- */
@@ -129,8 +138,7 @@
     var day = now.getDay();            // 0 = dimanche … 6 = samedi
     var hour = now.getHours() + now.getMinutes() / 60;
 
-    var items = document.querySelectorAll(".hours-list li");
-    items.forEach(function (li) {
+    document.querySelectorAll(".hours-list li").forEach(function (li) {
       if (parseInt(li.getAttribute("data-day"), 10) === day) {
         li.classList.add("today");
       }
@@ -149,12 +157,12 @@
       statusEl.classList.add("closed");
       if (isOpenDay && hour < OPEN_HOUR) {
         statusEl.textContent = "Fermé · ouvre aujourd'hui à 09h00";
+      } else if (day === 6) {
+        statusEl.textContent = "Fermé · réouverture lundi à 09h00";
+      } else if (day === 0) {
+        statusEl.textContent = "Fermé le dimanche · réouverture lundi à 09h00";
       } else {
-        statusEl.textContent = day === 6
-          ? "Fermé · réouverture lundi à 09h00"
-          : (day === 0
-              ? "Fermé le dimanche · réouverture lundi à 09h00"
-              : "Fermé · réouverture demain à 09h00");
+        statusEl.textContent = "Fermé · réouverture demain à 09h00";
       }
     }
   }
@@ -168,6 +176,7 @@
   /* -------- Initialisation -------- */
   document.addEventListener("DOMContentLoaded", function () {
     buildGallery();
+    applyStagger();
     initHeaderScroll();
     initMobileNav();
     initReveal();
