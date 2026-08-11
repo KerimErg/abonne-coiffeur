@@ -136,7 +136,7 @@ h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.05; }
 .hero-kicker .line { width: 34px; height: 1px; background: var(--copper); }
 .hero-title { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; margin: 0 0 1.6rem; line-height: .92; }
 .hero-title { font-size: clamp(3.2rem, 8vw, 6.6rem); color: #fff; display: flex; flex-direction: column; }
-.hero-title span { font-family: var(--font-body); font-weight: 500; font-size: clamp(1rem, 2.2vw, 1.7rem); letter-spacing: .42em; text-transform: uppercase; color: var(--copper); margin-top: .5rem; }
+.hero-title > span:last-child { font-family: var(--font-body); font-weight: 500; font-size: clamp(1rem, 2.2vw, 1.7rem); letter-spacing: .42em; text-transform: uppercase; color: var(--copper); margin-top: .5rem; }
 .hero-lead { font-size: clamp(1.05rem, 1.6vw, 1.24rem); color: rgba(245,243,238,.82); max-width: 46ch; margin: 0 0 2.2rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
 
@@ -299,6 +299,21 @@ h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.05; }
 .reveal.in { opacity: 1; transform: none; }
 a:focus-visible, button:focus-visible, .btn:focus-visible, iframe:focus-visible { outline: 2.5px solid var(--copper); outline-offset: 3px; border-radius: 6px; }
 
+/* ---------- Text Reveal du titre principal (au chargement) ---------- */
+.tr-line { display: block; }
+.tr-char {
+  display: inline-block; white-space: pre;
+  opacity: 0; transform: translateY(.42em); filter: blur(6px);
+  transition: opacity .62s var(--ease), transform .62s var(--ease), filter .62s var(--ease);
+  will-change: opacity, transform, filter;
+}
+.tr-char.tr-in { opacity: 1; transform: none; filter: none; }
+.hero-title.tr-ready { opacity: 1; transform: none; }
+/* Mobile : version allégée (pas de flou, montée plus courte) */
+@media (max-width: 560px) {
+  .tr-char { filter: none !important; transform: translateY(.3em); transition-duration: .5s; }
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -354,5 +369,6 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, iframe:focus-visible 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .tr-char { opacity: 1 !important; transform: none !important; filter: none !important; }
   * { transition-duration: .01ms !important; }
 }

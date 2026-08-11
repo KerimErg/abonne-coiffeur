@@ -114,7 +114,81 @@
     if (y) y.textContent = String(new Date().getFullYear());
   }
 
+  var prefersReduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* -------- Text Reveal du titre principal --------
+     Le texte « Aboné Coiffeur » apparaît progressivement, lettre par
+     lettre (fade + montée + léger flou), au chargement. Le texte lui-même
+     n'est pas modifié : les lettres sont ré-assemblées à l'identique.     */
+  function fillChars(container, text, start, step) {
+    var chars = Array.from(text);
+    var idx = start;
+    chars.forEach(function (ch) {
+      var s = document.createElement("span");
+      s.className = "tr-char";
+      s.textContent = ch;
+      s.style.transitionDelay = (idx * step) + "ms";
+      container.appendChild(s);
+      idx++;
+    });
+    return idx;
+  }
+
+  function initTextReveal() {
+    var h1 = document.querySelector(".hero-title");
+    if (!h1) return;
+    var sub = h1.querySelector("span");                 // « Coiffeur »
+    var big = "";
+    Array.prototype.forEach.call(h1.childNodes, function (n) {
+      if (n.nodeType === 3) big += n.nodeValue;         // « Aboné »
+    });
+    big = big.trim();
+    var subText = sub ? sub.textContent : "";
+    if (!big && !subText) return;
+
+    if (prefersReduced) return;                         // titre affiché normalement
+
+    // Retirer les nœuds texte bruts, reconstruire en lettres
+    Array.prototype.slice.call(h1.childNodes).forEach(function (n) {
+      if (n.nodeType === 3) h1.removeChild(n);
+    });
+
+    var step = 38, idx = 0;
+    if (big) {
+      var line = document.createElement("span");
+      line.className = "tr-line";
+      idx = fillChars(line, big, idx, step);
+      h1.insertBefore(line, sub || null);
+    }
+    if (sub) {
+      sub.textContent = "";
+      idx = fillChars(sub, subText, idx, step);
+    }
+
+    h1.classList.remove("reveal");
+    h1.classList.add("tr-ready");
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        h1.querySelectorAll(".tr-char").forEach(function (c) { c.classList.add("tr-in"); });
+      });
+    });
+  }
+
+  /* -------- Léger décalage (cascade) des apparitions groupées -------- */
+  function applyStagger() {
+    [".presta-list", ".gallery"].forEach(function (sel) {
+      var wrap = document.querySelector(sel);
+      if (!wrap) return;
+      wrap.querySelectorAll(".reveal").forEach(function (el, i) {
+        el.style.transitionDelay = (Math.min(i, 6) * 70) + "ms";
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    initTextReveal();
+    applyStagger();
     initHeaderScroll();
     initMobileNav();
     initReveal();
