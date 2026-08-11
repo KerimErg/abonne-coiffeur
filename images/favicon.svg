@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Aboné Coiffeur">
-  <rect width="64" height="64" rx="14" fill="#171512"/>
-  <text x="32" y="45" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="500" fill="#f6f3ee">A</text>
-  <circle cx="47" cy="18" r="3.4" fill="#b07d5c"/>
+  <rect width="64" height="64" rx="20" fill="#6E7B57"/>
+  <text x="32" y="45" text-anchor="middle" font-family="'Bricolage Grotesque', Georgia, serif" font-size="38" font-weight="800" fill="#F4EFE3">A</text>
+  <circle cx="48" cy="17" r="4" fill="#C77B54"/>
 </svg>

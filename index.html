@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aboné Coiffeur — Salon de coiffure à Bischheim</title>
-  <meta name="description" content="Aboné Coiffeur, salon de coiffure mixte au 8 rue du Général Leclerc à Bischheim (67800). Coupe, couleur, balayage, brushing, coiffure de mariage. Ouvert du lundi au samedi, 9h–19h. Tél. 03 88 33 39 47." />
-  <meta name="theme-color" content="#17140f" />
+  <title>Aboné Coiffeur — Studio de coiffure à Bischheim</title>
+  <meta name="description" content="Aboné Coiffeur, studio de coiffure au 8 rue du Général Leclerc à Bischheim (67800). Coupe, coloration, balayage, brushing, coiffure de mariage. Femmes, hommes & enfants. Ouvert du lundi au samedi, 9h–19h. Tél. 03 88 33 39 47." />
+  <meta name="theme-color" content="#2E2419" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aboné Coiffeur — Salon de coiffure à Bischheim" />
-  <meta property="og:description" content="Salon de coiffure mixte à Bischheim. Coupe, couleur, balayage, coiffure de mariage. Ouvert du lundi au samedi." />
+  <meta property="og:title" content="Aboné Coiffeur — Studio de coiffure à Bischheim" />
+  <meta property="og:description" content="Studio de coiffure contemporain à Bischheim. Coupe, couleur, balayage, coiffure de mariage. Ouvert du lundi au samedi." />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:image" content="images/hero-portrait.svg" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Local business structured data (données publiques vérifiées) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,16 +54,12 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="#accueil" class="brand" aria-label="Aboné Coiffeur — accueil">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span class="brand-text">
-          <span class="brand-name">Aboné Coiffeur</span>
-          <span class="brand-sub">Salon · Bischheim</span>
-        </span>
+        <span class="brand-name">Aboné</span>
+        <span class="brand-sub">Studio · Bischheim</span>
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-        <a href="#accueil">Accueil</a>
-        <a href="#salon">Le salon</a>
+        <a href="#salon">Le studio</a>
         <a href="#prestations">Prestations</a>
         <a href="#galerie">Galerie</a>
         <a href="#horaires">Horaires</a>
@@ -78,7 +71,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
           <span>03 88 33 39 47</span>
         </a>
-        <a class="btn btn-primary" href="tel:+33388333947">Prendre rendez-vous</a>
+        <a class="btn btn-primary" href="tel:+33388333947">Prendre rendez-vous <span class="btn-ico" aria-hidden="true">→</span></a>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
@@ -90,55 +83,66 @@
   <main>
     <!-- ===================== ACCUEIL / HERO ===================== -->
     <section class="hero" id="accueil">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow reveal">Salon de coiffure · Bischheim</p>
-          <h1 class="hero-title reveal">L'art de sublimer<br />votre <em>coiffure</em></h1>
-          <p class="hero-lead reveal">Coupe, couleur, balayage et coiffure de mariage&nbsp;: un savoir-faire chaleureux et précis, pour femmes, hommes et enfants, au cœur de Bischheim.</p>
-          <div class="hero-cta reveal">
-            <a class="btn btn-primary btn-lg" href="tel:+33388333947">Prendre rendez-vous</a>
-            <a class="btn btn-link btn-lg" href="#prestations">Voir les prestations <span aria-hidden="true">→</span></a>
-          </div>
-          <ul class="hero-trust reveal">
-            <li><strong>4,5/5</strong><span>Avis Google</span></li>
-            <li><strong>Lun – Sam</strong><span>9h – 19h</span></li>
-            <li><strong>Sans RDV</strong><span>possible</span></li>
-          </ul>
-        </div>
-        <div class="hero-visual reveal">
-          <div class="hero-frame">
-            <img src="images/hero-portrait.svg" alt="Illustration éditoriale d'une coiffure élégante" />
-          </div>
-          <div class="hero-chip">
-            <span class="hero-chip-k">Salon mixte</span>
-            <span class="hero-chip-v">Femmes · Hommes · Enfants</span>
+      <span class="blob blob-sage" aria-hidden="true"></span>
+      <span class="blob blob-terra" aria-hidden="true"></span>
+      <div class="container hero-wrap">
+        <p class="hero-kicker reveal"><span class="dot" aria-hidden="true"></span> Salon de coiffure · Bischheim</p>
+
+        <h1 class="hero-word reveal" aria-label="Aboné">Abon<span class="acc">é</span></h1>
+
+        <div class="hero-lower">
+          <figure class="hero-media reveal">
+            <img src="images/hero-portrait.svg" alt="Illustration éditoriale d'une coiffure — studio Aboné" />
+            <figcaption>Studio de coiffure<br />depuis Bischheim</figcaption>
+          </figure>
+
+          <div class="hero-text reveal">
+            <p class="hero-sub">Coupe, couleur, balayage &amp; coiffure de mariage — un studio <em>créatif et chaleureux</em> pour femmes, hommes et enfants, au cœur de Bischheim.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary btn-lg" href="tel:+33388333947">Prendre rendez-vous <span class="btn-ico" aria-hidden="true">→</span></a>
+              <a class="btn btn-call btn-lg" href="tel:+33388333947">
+                <span class="btn-call-k">Appeler</span>
+                <span class="btn-call-v">03 88 33 39 47</span>
+              </a>
+            </div>
+            <ul class="hero-tags">
+              <li>Sans rendez-vous possible</li>
+              <li>Lun – Sam · 9h – 19h</li>
+              <li>4,5/5 sur Google</li>
+            </ul>
           </div>
         </div>
       </div>
+      <span class="hero-vertical" aria-hidden="true">Studio de coiffure — Est. Bischheim</span>
     </section>
 
-    <!-- ===================== LE SALON ===================== -->
-    <section class="section salon" id="salon">
-      <div class="container grid-2">
-        <div class="salon-media reveal">
-          <div class="framed">
-            <img src="images/salon.svg" alt="Illustration de l'ambiance du salon Aboné Coiffeur" loading="lazy" />
-          </div>
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Coupe ✦ Coloration ✦ Balayage ✦ Brushing ✦ Permanente ✦ Chignon &amp; mariage ✦</span>
+        <span>Coupe ✦ Coloration ✦ Balayage ✦ Brushing ✦ Permanente ✦ Chignon &amp; mariage ✦</span>
+      </div>
+    </div>
+
+    <!-- ===================== LE STUDIO ===================== -->
+    <section class="section studio" id="salon">
+      <div class="container studio-grid">
+        <div class="studio-media reveal">
+          <figure class="studio-photo">
+            <img src="images/salon.svg" alt="Illustration de l'ambiance du studio Aboné Coiffeur" loading="lazy" />
+          </figure>
+          <span class="studio-badge">Femmes · Hommes · Enfants</span>
         </div>
-        <div class="salon-copy">
-          <p class="eyebrow reveal">Le salon</p>
-          <h2 class="section-title reveal">Un lieu chaleureux,<br />un accueil soigné</h2>
-          <p class="reveal">Situé au <strong>8&nbsp;rue du Général&nbsp;Leclerc</strong>, en plein cœur de Bischheim, Aboné&nbsp;Coiffeur vous reçoit dans une ambiance élégante et conviviale. Notre équipe met tout son savoir-faire au service de votre style, de la coupe classique aux couleurs les plus actuelles.</p>
-          <p class="reveal">Femmes, hommes et enfants&nbsp;: chacun trouve ici une prestation sur mesure, réalisée avec attention. Prenez rendez-vous par téléphone&nbsp;— ou, selon les disponibilités, présentez-vous sans rendez-vous.</p>
-          <ul class="feature-list reveal">
-            <li><span class="tick" aria-hidden="true"></span> Salon mixte&nbsp;: femmes, hommes &amp; enfants</li>
-            <li><span class="tick" aria-hidden="true"></span> Conseil personnalisé &amp; coiffeur visagiste</li>
-            <li><span class="tick" aria-hidden="true"></span> En centre de Bischheim, accès facile</li>
-            <li><span class="tick" aria-hidden="true"></span> Sans rendez-vous possible</li>
+        <div class="studio-copy">
+          <p class="eyebrow reveal">Le studio</p>
+          <h2 class="studio-title reveal">Un studio de coiffure <em>contemporain</em> au cœur de&nbsp;Bischheim</h2>
+          <p class="reveal">Au <strong>8 rue du Général Leclerc</strong>, Aboné cultive une coiffure à la fois créative et sur mesure. On y vient pour une coupe précise, une couleur lumineuse ou un chignon de cérémonie — toujours dans une ambiance chaleureuse et détendue.</p>
+          <ul class="studio-list reveal">
+            <li><span>01</span> Conseil personnalisé &amp; coiffeur visagiste</li>
+            <li><span>02</span> Coupe, couleur &amp; coiffage sur mesure</li>
+            <li><span>03</span> Accueil sans rendez-vous selon les disponibilités</li>
           </ul>
-          <div class="reveal">
-            <a class="btn btn-outline" href="#contact">Nous rendre visite</a>
-          </div>
+          <a class="btn btn-ghost reveal" href="#contact">Nous rendre visite <span class="btn-ico" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -146,174 +150,168 @@
     <!-- ===================== PRESTATIONS ===================== -->
     <section class="section prestations" id="prestations">
       <div class="container">
-        <div class="section-head">
+        <header class="presta-head">
           <p class="eyebrow reveal">Prestations</p>
-          <h2 class="section-title reveal">Nos services de coiffure</h2>
-          <p class="section-intro reveal">Une gamme complète pour prendre soin de vos cheveux. Les tarifs vous sont communiqués sur simple demande, en salon ou par téléphone, selon la longueur et la prestation.</p>
-        </div>
+          <h2 class="presta-title reveal">Le vestiaire<br /><em>coiffure</em></h2>
+          <p class="presta-intro reveal">Une gamme complète, pensée pour vos cheveux. Les tarifs sont communiqués au studio ou par téléphone, selon la longueur et la prestation.</p>
+        </header>
 
-        <div class="cards">
-          <article class="card reveal">
-            <span class="card-num">01</span>
-            <h3>Coupe &amp; coiffage</h3>
-            <p>Coupe femme, homme et enfant, dégradés, brushing, mise en plis et coiffage express pour un résultat impeccable.</p>
-          </article>
-          <article class="card reveal">
-            <span class="card-num">02</span>
-            <h3>Coloration</h3>
-            <p>Coloration intégrale et couvrance, teintes lumineuses et durables, adaptées à votre carnation et à vos envies.</p>
-          </article>
-          <article class="card reveal">
-            <span class="card-num">03</span>
-            <h3>Balayage &amp; mèches</h3>
-            <p>Balayage, mèches et jeux de lumière pour un effet naturel, subtil et sur mesure qui illumine votre chevelure.</p>
-          </article>
-          <article class="card reveal">
-            <span class="card-num">04</span>
-            <h3>Brushing &amp; soins</h3>
-            <p>Brushing lisse ou volumineux, soins et lissage à la kératine pour des cheveux souples, brillants et disciplinés.</p>
-          </article>
-          <article class="card reveal">
-            <span class="card-num">05</span>
-            <h3>Permanente</h3>
-            <p>Permanente et mise en forme durable pour apporter du corps, du mouvement et de la tenue à votre coiffure.</p>
-          </article>
-          <article class="card reveal">
-            <span class="card-num">06</span>
-            <h3>Chignon &amp; mariage</h3>
-            <p>Chignons, tresses et coiffures de cérémonie&nbsp;: sublimez les mariées et les grandes occasions avec élégance.</p>
-          </article>
-        </div>
+        <ol class="presta-list">
+          <li class="presta-row reveal">
+            <span class="presta-num">01</span>
+            <div class="presta-body">
+              <h3>Coupe &amp; coiffage</h3>
+              <p>Coupe femme, homme et enfant, dégradés, brushing, mise en plis et coiffage express.</p>
+            </div>
+            <span class="presta-arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="presta-row reveal">
+            <span class="presta-num">02</span>
+            <div class="presta-body">
+              <h3>Coloration</h3>
+              <p>Coloration intégrale et couvrance, teintes lumineuses et durables, adaptées à vos envies.</p>
+            </div>
+            <span class="presta-arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="presta-row reveal">
+            <span class="presta-num">03</span>
+            <div class="presta-body">
+              <h3>Balayage &amp; mèches</h3>
+              <p>Balayage, mèches et jeux de lumière pour un effet naturel, subtil et sur mesure.</p>
+            </div>
+            <span class="presta-arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="presta-row reveal">
+            <span class="presta-num">04</span>
+            <div class="presta-body">
+              <h3>Brushing &amp; soins</h3>
+              <p>Brushing lisse ou volumineux, soins et lissage à la kératine pour des cheveux souples et brillants.</p>
+            </div>
+            <span class="presta-arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="presta-row reveal">
+            <span class="presta-num">05</span>
+            <div class="presta-body">
+              <h3>Permanente</h3>
+              <p>Permanente et mise en forme durable pour apporter du corps, du mouvement et de la tenue.</p>
+            </div>
+            <span class="presta-arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="presta-row reveal">
+            <span class="presta-num">06</span>
+            <div class="presta-body">
+              <h3>Chignon &amp; mariage</h3>
+              <p>Chignons, tresses et coiffures de cérémonie pour sublimer les mariées et les grandes occasions.</p>
+            </div>
+            <span class="presta-arrow" aria-hidden="true">→</span>
+          </li>
+        </ol>
 
-        <p class="prestations-note reveal">Une prestation particulière en tête&nbsp;? <a href="tel:+33388333947">Appelez-nous au 03&nbsp;88&nbsp;33&nbsp;39&nbsp;47</a>, nous vous conseillons avec plaisir.</p>
+        <p class="presta-note reveal">Une envie particulière&nbsp;? <a href="tel:+33388333947">Appelez le studio au 03&nbsp;88&nbsp;33&nbsp;39&nbsp;47</a>.</p>
       </div>
     </section>
 
     <!-- ===================== GALERIE ===================== -->
     <section class="section galerie" id="galerie">
       <div class="container">
-        <div class="section-head">
+        <header class="galerie-head">
           <p class="eyebrow reveal">Galerie</p>
-          <h2 class="section-title reveal">L'atmosphère du salon</h2>
-          <p class="section-intro reveal">Un aperçu de l'univers Aboné&nbsp;Coiffeur&nbsp;: le soin de la coupe, l'élégance de la couleur et l'attention portée à chaque détail.</p>
-        </div>
-        <div class="gallery" id="gallery" role="list">
-          <!-- Les visuels sont générés par js/main.js à partir de la liste galleryItems.
-               Pour ajouter vos propres photos, voir images/README-PHOTOS.md -->
+          <h2 class="galerie-title reveal">Dans l'atelier</h2>
+        </header>
+        <div class="galerie-collage">
+          <figure class="g g1 reveal"><img src="images/gallery-1.svg" alt="Coupe et coiffage au studio Aboné" loading="lazy" /><figcaption>Coupe &amp; coiffage</figcaption></figure>
+          <figure class="g g2 reveal"><img src="images/gallery-2.svg" alt="Coloration réalisée au studio" loading="lazy" /><figcaption>Coloration</figcaption></figure>
+          <figure class="g g3 reveal"><img src="images/gallery-3.svg" alt="Balayage et jeux de lumière" loading="lazy" /><figcaption>Balayage &amp; mèches</figcaption></figure>
+          <figure class="g g4 reveal"><img src="images/gallery-4.svg" alt="Brushing et mise en forme" loading="lazy" /><figcaption>Brushing &amp; soins</figcaption></figure>
+          <figure class="g g5 reveal"><img src="images/gallery-5.svg" alt="Chignon et coiffure de mariage" loading="lazy" /><figcaption>Chignon &amp; mariage</figcaption></figure>
+          <figure class="g g6 reveal"><img src="images/gallery-6.svg" alt="Ambiance du studio Aboné" loading="lazy" /><figcaption>L'ambiance</figcaption></figure>
         </div>
       </div>
     </section>
 
-    <!-- ===================== HORAIRES ===================== -->
-    <section class="section horaires" id="horaires">
-      <div class="container grid-2">
-        <div class="hours-copy">
+    <!-- ===================== HORAIRES + CONTACT ===================== -->
+    <section class="section infos" id="horaires">
+      <div class="container infos-grid">
+        <div class="infos-hours">
           <p class="eyebrow reveal">Horaires</p>
-          <h2 class="section-title reveal">Nos horaires d'ouverture</h2>
-          <p class="reveal">Nous vous accueillons <strong>du lundi au samedi</strong>. Pour garantir votre créneau, réservez de préférence par téléphone&nbsp;; l'accueil sans rendez-vous reste possible selon les disponibilités.</p>
-          <div class="hours-cta reveal">
-            <a class="btn btn-primary" href="tel:+33388333947">Appeler le salon</a>
-            <a class="btn btn-outline" href="#contact">Voir l'itinéraire</a>
-          </div>
-        </div>
-        <div class="hours-card reveal" id="hoursCard">
-          <ul class="hours-list">
-            <li data-day="1"><span>Lundi</span><span>09h00 – 19h00</span></li>
-            <li data-day="2"><span>Mardi</span><span>09h00 – 19h00</span></li>
-            <li data-day="3"><span>Mercredi</span><span>09h00 – 19h00</span></li>
-            <li data-day="4"><span>Jeudi</span><span>09h00 – 19h00</span></li>
-            <li data-day="5"><span>Vendredi</span><span>09h00 – 19h00</span></li>
-            <li data-day="6"><span>Samedi</span><span>09h00 – 19h00</span></li>
+          <h2 class="infos-title reveal">Quand passer<br /><em>nous voir</em></h2>
+          <ul class="hours-list reveal">
+            <li data-day="1"><span>Lundi</span><span>09h — 19h</span></li>
+            <li data-day="2"><span>Mardi</span><span>09h — 19h</span></li>
+            <li data-day="3"><span>Mercredi</span><span>09h — 19h</span></li>
+            <li data-day="4"><span>Jeudi</span><span>09h — 19h</span></li>
+            <li data-day="5"><span>Vendredi</span><span>09h — 19h</span></li>
+            <li data-day="6"><span>Samedi</span><span>09h — 19h</span></li>
             <li data-day="0" class="is-closed"><span>Dimanche</span><span>Fermé</span></li>
           </ul>
-          <p class="hours-status" id="hoursStatus" aria-live="polite"></p>
+          <p class="hours-status reveal" id="hoursStatus" aria-live="polite"></p>
         </div>
-      </div>
-    </section>
 
-    <!-- ===================== CONTACT + MAP ===================== -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section-head">
+        <div class="infos-contact" id="contact">
           <p class="eyebrow reveal">Contact</p>
-          <h2 class="section-title reveal">Venez nous rencontrer</h2>
-          <p class="section-intro reveal">Au 8&nbsp;rue du Général&nbsp;Leclerc à Bischheim. Un renseignement, un rendez-vous&nbsp;? Nous sommes à votre écoute.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-info reveal">
-            <ul class="info-list">
-              <li>
-                <span class="info-k">Adresse</span>
-                <span class="info-v">8 rue du Général Leclerc<br />67800 Bischheim</span>
-                <a class="info-link" href="https://www.google.com/maps/search/?api=1&query=Abon%C3%A9%20Coiffeur%2C%208%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim" target="_blank" rel="noopener">Ouvrir dans Google Maps <span aria-hidden="true">↗</span></a>
-              </li>
-              <li>
-                <span class="info-k">Téléphone</span>
-                <span class="info-v"><a href="tel:+33388333947">03 88 33 39 47</a></span>
-                <a class="info-link" href="tel:+33388333947">Appeler maintenant <span aria-hidden="true">↗</span></a>
-              </li>
-              <li>
-                <span class="info-k">Horaires</span>
-                <span class="info-v">Lundi – Samedi&nbsp;: 9h – 19h<br />Dimanche&nbsp;: fermé</span>
-              </li>
-            </ul>
-
-            <a class="btn btn-primary btn-block" href="tel:+33388333947">Prendre rendez-vous</a>
-
-            <!-- Réseaux sociaux : à activer dès que les pages officielles seront confirmées.
-                 Décommentez et renseignez les liens réels ci-dessous.
-            <div class="socials">
-              <a href="#" aria-label="Instagram" rel="noopener">Instagram</a>
-              <a href="#" aria-label="Facebook" rel="noopener">Facebook</a>
-            </div>
-            -->
+          <div class="contact-block reveal">
+            <span class="contact-k">Adresse</span>
+            <p class="contact-v">8 rue du Général Leclerc<br />67800 Bischheim</p>
+            <a class="contact-link" href="https://www.google.com/maps/search/?api=1&query=Abon%C3%A9%20Coiffeur%2C%208%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim" target="_blank" rel="noopener">Itinéraire Google Maps <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="contact-block reveal">
+            <span class="contact-k">Téléphone</span>
+            <p class="contact-v"><a href="tel:+33388333947">03 88 33 39 47</a></p>
           </div>
 
-          <div class="contact-map reveal">
-            <iframe
-              title="Carte — Aboné Coiffeur, 8 rue du Général Leclerc, Bischheim"
-              src="https://www.google.com/maps?q=8%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen></iframe>
+          <div class="contact-cta reveal">
+            <a class="btn btn-primary btn-lg" href="tel:+33388333947">Prendre rendez-vous <span class="btn-ico" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost btn-lg" href="tel:+33388333947">Appeler</a>
           </div>
+
+          <!-- Réseaux sociaux : à activer dès que les pages officielles seront confirmées.
+               Décommentez et renseignez les liens réels ci-dessous.
+          <div class="socials">
+            <a href="#" aria-label="Instagram" rel="noopener">Instagram</a>
+            <a href="#" aria-label="Facebook" rel="noopener">Facebook</a>
+          </div>
+          -->
         </div>
+
+        <figure class="infos-map reveal">
+          <iframe
+            title="Carte — Aboné Coiffeur, 8 rue du Général Leclerc, Bischheim"
+            src="https://www.google.com/maps?q=8%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </figure>
       </div>
     </section>
   </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <div>
-          <p class="footer-name">Aboné Coiffeur</p>
-          <p class="footer-tag">Salon de coiffure · Bischheim</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-info">
+          <p class="footer-line">8 rue du Général Leclerc · 67800 Bischheim</p>
+          <p class="footer-line"><a href="tel:+33388333947">03 88 33 39 47</a></p>
+          <p class="footer-line">Lundi au samedi · 9h – 19h</p>
         </div>
+        <nav class="footer-nav" aria-label="Navigation pied de page">
+          <a href="#accueil">Accueil</a>
+          <a href="#salon">Le studio</a>
+          <a href="#prestations">Prestations</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#horaires">Horaires</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-      <nav class="footer-nav" aria-label="Navigation pied de page">
-        <a href="#accueil">Accueil</a>
-        <a href="#salon">Le salon</a>
-        <a href="#prestations">Prestations</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#horaires">Horaires</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="footer-contact">
-        <p>8 rue du Général Leclerc<br />67800 Bischheim</p>
-        <p><a href="tel:+33388333947">03 88 33 39 47</a></p>
-        <p>Lundi au samedi · 9h – 19h</p>
+      <div class="footer-word" aria-hidden="true">Aboné</div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Aboné Coiffeur — Bischheim</p>
+        <p>Studio de coiffure · Femmes, hommes &amp; enfants</p>
       </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year">2026</span> Aboné Coiffeur — Tous droits réservés.</p>
-      <p>8 rue du Général Leclerc, 67800 Bischheim</p>
     </div>
   </footer>
 
-  <!-- Barre d'action mobile flottante -->
+  <!-- Barre d'action mobile -->
   <div class="mobile-bar">
     <a class="mobile-bar-btn call" href="tel:+33388333947">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>

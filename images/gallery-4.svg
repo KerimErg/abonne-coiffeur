@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Brushing et soins">
-  <rect width="600" height="600" fill="#ece3d5"/>
-  <g transform="translate(150,158)" fill="#1a1712">
+  <rect width="600" height="600" fill="#A7B492"/>
+  <g transform="translate(150,158)" fill="#2E2419">
     <path d="M40 40 h150 a72 72 0 0 1 0 144 h-42 l-22 92 h-42 l16-92 h-64 a72 72 0 0 1 0-144Z"/>
   </g>
-  <circle cx="205" cy="270" r="20" fill="#ece3d5"/>
-  <g stroke="#b07d5c" stroke-width="6" fill="none" stroke-linecap="round">
+  <circle cx="205" cy="270" r="20" fill="#A7B492"/>
+  <g stroke="#C77B54" stroke-width="6" fill="none" stroke-linecap="round">
     <path d="M430 250 q42 22 0 64"/><path d="M462 240 q52 32 0 84"/>
   </g>
 </svg>

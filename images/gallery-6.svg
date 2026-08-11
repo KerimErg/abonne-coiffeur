@@ -1,10 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="L'ambiance du salon">
-  <rect width="600" height="600" fill="#1a1712"/>
-  <ellipse cx="300" cy="230" rx="120" ry="150" fill="#f5efe6"/>
-  <ellipse cx="300" cy="230" rx="120" ry="150" fill="none" stroke="#b07d5c" stroke-width="5"/>
-  <path d="M250 150 C305 190, 305 280, 262 330" stroke="#e2d7c5" stroke-width="12" fill="none" stroke-linecap="round"/>
-  <rect x="150" y="410" width="300" height="14" rx="6" fill="#efe6d6"/>
-  <g fill="#efe6d6">
-    <rect x="250" y="356" width="22" height="54" rx="6"/><rect x="290" y="366" width="20" height="44" rx="6"/><rect x="330" y="358" width="20" height="52" rx="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="L'ambiance du studio">
+  <rect width="600" height="600" fill="#C77B54"/>
+  <path d="M300 120 C400 120 470 210 470 320 C470 430 400 500 300 500 C200 500 130 430 130 320 C130 210 200 120 300 120 Z" fill="#FBF7EE"/>
+  <path d="M250 190 C305 230, 305 320, 262 370" stroke="#A7B492" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <rect x="150" y="470" width="300" height="14" rx="7" fill="#2E2419"/>
+  <g fill="#2E2419">
+    <rect x="250" y="416" width="22" height="54" rx="8" fill="#6E7B57"/><rect x="290" y="426" width="20" height="44" rx="8" fill="#2E2419"/><rect x="330" y="418" width="20" height="52" rx="8" fill="#6E7B57"/>
   </g>
 </svg>

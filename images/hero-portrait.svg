@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Portrait éditorial — Aboné Coiffeur">
-  <rect width="900" height="1120" fill="#e8ded0"/>
-  <!-- cercle d'ambiance -->
-  <circle cx="500" cy="450" r="330" fill="#ddccb7"/>
-  <!-- silhouette tête + chevelure -->
-  <path d="M250 1120
-    C300 950, 362 882, 432 802
-    C472 756, 432 730, 416 705
-    C406 690, 388 676, 372 656
-    C356 634, 344 622, 350 600
-    C356 578, 388 560, 396 520
-    C402 486, 412 470, 442 452
-    C512 414, 542 398, 610 380
-    C690 358, 732 432, 746 562
-    C766 704, 760 852, 720 1000
-    C705 1058, 700 1092, 700 1120
-    Z" fill="#1a1712"/>
-  <!-- mèches lumineuses -->
-  <g fill="none" stroke="#efe6d6" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round">
-    <path d="M560 372 C690 432, 720 656, 690 902"/>
-    <path d="M520 404 C640 476, 665 684, 640 902"/>
-    <path d="M614 400 C722 470, 737 684, 706 950"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Portrait — studio Aboné Coiffeur">
+  <rect width="900" height="1080" fill="#EFE7D4"/>
+  <!-- blob sauge organique -->
+  <path d="M470 150 C650 120 780 250 780 430 C780 610 700 720 560 800 C420 880 250 860 180 700 C110 540 200 380 300 300 C360 250 390 165 470 150 Z" fill="#A7B492"/>
+  <!-- silhouette brun foncé -->
+  <path d="M250 1080
+    C300 920, 362 852, 432 772
+    C472 726, 432 700, 416 675
+    C406 660, 388 646, 372 626
+    C356 604, 344 592, 350 570
+    C356 548, 388 530, 396 490
+    C402 456, 412 440, 442 422
+    C512 384, 542 368, 610 350
+    C690 328, 732 402, 746 532
+    C766 674, 760 822, 720 970
+    C705 1028, 700 1050, 700 1080
+    Z" fill="#2E2419"/>
+  <!-- mèches claires -->
+  <g fill="none" stroke="#EFE7D4" stroke-opacity="0.4" stroke-width="5" stroke-linecap="round">
+    <path d="M560 342 C690 402, 720 626, 690 872"/>
+    <path d="M520 374 C640 446, 665 654, 640 872"/>
   </g>
-  <!-- accent discret : boucle d'oreille -->
-  <circle cx="452" cy="656" r="9" fill="#b07d5c"/>
-  <path d="M452 656 l0 26" stroke="#b07d5c" stroke-width="3" stroke-linecap="round"/>
+  <!-- boucle d'oreille terracotta -->
+  <circle cx="452" cy="626" r="10" fill="#C77B54"/>
+  <path d="M452 626 l0 26" stroke="#C77B54" stroke-width="3" stroke-linecap="round"/>
 </svg>

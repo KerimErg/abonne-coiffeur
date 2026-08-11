@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Balayage et mèches">
-  <rect width="600" height="600" fill="#1a1712"/>
+  <rect width="600" height="600" fill="#2E2419"/>
   <g fill="none" stroke-linecap="round">
-    <path d="M120 70 C 220 230, 220 390, 140 560" stroke="#efe6d6" stroke-opacity="0.85" stroke-width="9"/>
-    <path d="M240 50 C 340 230, 320 410, 250 570" stroke="#efe6d6" stroke-opacity="0.55" stroke-width="11"/>
-    <path d="M360 70 C 470 230, 450 410, 380 560" stroke="#efe6d6" stroke-opacity="0.7" stroke-width="8"/>
-    <path d="M470 50 C 560 230, 540 410, 480 570" stroke="#b07d5c" stroke-width="10"/>
+    <path d="M120 70 C 220 230, 220 390, 140 560" stroke="#F3ECDC" stroke-opacity="0.85" stroke-width="9"/>
+    <path d="M240 50 C 340 230, 320 410, 250 570" stroke="#F3ECDC" stroke-opacity="0.5" stroke-width="11"/>
+    <path d="M360 70 C 470 230, 450 410, 380 560" stroke="#A7B492" stroke-width="8"/>
+    <path d="M470 50 C 560 230, 540 410, 480 570" stroke="#C77B54" stroke-width="10"/>
   </g>
 </svg>
