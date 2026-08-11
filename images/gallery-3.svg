@@ -1,9 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Balayage et mèches">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Rasage et contours">
   <rect width="600" height="600" fill="#5C6B80"/>
-  <g fill="none" stroke-linecap="round">
-    <path d="M120 70 C 220 230, 220 390, 140 560" stroke="#F4F2EC" stroke-opacity="0.9" stroke-width="9"/>
-    <path d="M240 50 C 340 230, 320 410, 250 570" stroke="#F4F2EC" stroke-opacity="0.55" stroke-width="11"/>
-    <path d="M360 70 C 470 230, 450 410, 380 560" stroke="#14263F" stroke-width="8"/>
-    <path d="M470 50 C 560 230, 540 410, 480 570" stroke="#B98A5E" stroke-width="10"/>
+  <!-- rasoir droit (coupe-chou) ouvert -->
+  <g transform="translate(300,300) rotate(-32)">
+    <!-- lame -->
+    <path d="M-150 -34 h250 a14 14 0 0 1 14 14 v20 a14 14 0 0 1 -14 14 h-250 a10 10 0 0 1 0 -48 Z" fill="#F4F2EC"/>
+    <path d="M-150 -22 h236" stroke="#AAB4C2" stroke-width="4" stroke-linecap="round"/>
+    <!-- pivot -->
+    <circle cx="120" cy="0" r="8" fill="#14263F"/>
+    <!-- manche -->
+    <g transform="translate(120,0) rotate(28)">
+      <rect x="0" y="-16" width="200" height="32" rx="16" fill="#14263F"/>
+      <rect x="176" y="-16" width="16" height="32" rx="8" fill="#B98A5E"/>
+    </g>
   </g>
 </svg>
