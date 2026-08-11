@@ -484,10 +484,46 @@ h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.08; }
 .mobile-bar-btn.rdv { background: linear-gradient(150deg, var(--gold), var(--gold-2)); color: var(--anthracite); }
 
 /* ============================================================
-   Animations légères au scroll
+   Animations au défilement
    ============================================================ */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .85s var(--ease), transform .85s var(--ease); }
+.reveal { opacity: 0; transform: translateY(26px) scale(.986); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
+
+/* ============================================================
+   Profondeur & 3D au survol (curseur — ordinateur uniquement)
+   Ajouté par js/main.js : classe .is-tilting + <span class="tilt-glare">
+   ============================================================ */
+.cards, .gallery { perspective: 1500px; }
+.salon-media { perspective: 1200px; }
+.card, .gallery-item, .framed { transform-style: preserve-3d; }
+.card.is-tilting, .gallery-item.is-tilting, .framed.is-tilting { will-change: transform; }
+
+/* Reflet lumineux qui suit le curseur */
+.tilt-glare {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 1;
+  background: radial-gradient(210px 210px at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,.20), transparent 60%);
+  opacity: 0; transition: opacity .5s var(--ease); mix-blend-mode: screen;
+}
+.is-tilting > .tilt-glare { opacity: 1; }
+/* garder le contenu au-dessus du reflet */
+.card > *:not(.tilt-glare) { position: relative; z-index: 2; }
+.gallery-item figcaption { z-index: 2; }
+
+/* Accueil : parallaxe douce au curseur */
+.hero-grid { position: relative; z-index: 1; }
+.hero-visual { perspective: 1000px; }
+.hero-frame, .hero-chip { transition: transform .55s var(--ease); }
+.hero-glow {
+  position: absolute; z-index: 0; pointer-events: none; opacity: 0;
+  left: 50%; top: 30%; width: 620px; height: 620px; margin: -310px 0 0 -310px;
+  background: radial-gradient(closest-side, rgba(195,156,98,.22), transparent 72%);
+  transition: opacity .7s ease; mix-blend-mode: screen;
+}
+
+/* Focus clavier bien visible (accessibilité) */
+a:focus-visible, button:focus-visible, .btn:focus-visible, iframe:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px;
+}
 
 /* ============================================================
    RESPONSIVE
@@ -549,5 +585,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.08; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .tilt-glare, .hero-glow { display: none !important; }
+  .card, .gallery-item, .framed, .hero-frame, .hero-chip { transform: none !important; }
   * { transition-duration: .01ms !important; }
 }

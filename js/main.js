@@ -173,6 +173,110 @@
     if (y) y.textContent = String(new Date().getFullYear());
   }
 
+  /* -------- Réglages effets pointeur --------
+     Les effets 3D / parallaxe ne s'activent que sur ordinateur
+     (souris fine) et jamais si l'utilisateur préfère réduire les
+     animations, ni sur écran tactile → mobile reste léger.          */
+  function pointerEffectsAllowed() {
+    if (!window.matchMedia) return false;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+    return matchMedia("(hover: hover) and (pointer: fine)").matches;
+  }
+
+  /* -------- Inclinaison 3D légère au survol -------- */
+  function initTilt() {
+    if (!pointerEffectsAllowed()) return;
+
+    var groups = [
+      { sel: ".card", max: 6, depth: 16 },
+      { sel: ".gallery-item", max: 7, depth: 18 },
+      { sel: ".framed", max: 5, depth: 12 }
+    ];
+
+    groups.forEach(function (g) {
+      document.querySelectorAll(g.sel).forEach(function (el) {
+        var glare = document.createElement("span");
+        glare.className = "tilt-glare";
+        el.appendChild(glare);
+
+        var rect = null, raf = 0, lastE = null;
+
+        var render = function () {
+          raf = 0;
+          if (!rect || !lastE) return;
+          var px = (lastE.clientX - rect.left) / rect.width;
+          var py = (lastE.clientY - rect.top) / rect.height;
+          px = Math.min(1, Math.max(0, px));
+          py = Math.min(1, Math.max(0, py));
+          var rx = (0.5 - py) * g.max;
+          var ry = (px - 0.5) * g.max;
+          el.style.transform =
+            "rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) +
+            "deg) translateZ(" + g.depth + "px)";
+          el.style.setProperty("--gx", (px * 100).toFixed(1) + "%");
+          el.style.setProperty("--gy", (py * 100).toFixed(1) + "%");
+        };
+
+        el.addEventListener("mouseenter", function () {
+          rect = el.getBoundingClientRect();
+          el.classList.add("is-tilting");
+          el.style.transition = "transform .2s var(--ease)";
+        });
+        el.addEventListener("mousemove", function (e) {
+          lastE = e;
+          if (!raf) raf = requestAnimationFrame(render);
+        }, { passive: true });
+        el.addEventListener("mouseleave", function () {
+          if (raf) { cancelAnimationFrame(raf); raf = 0; }
+          el.classList.remove("is-tilting");
+          el.style.transition = "transform .6s var(--ease)";
+          el.style.transform = "";
+        });
+      });
+    });
+  }
+
+  /* -------- Parallaxe douce de l'accueil au curseur -------- */
+  function initHeroParallax() {
+    if (!pointerEffectsAllowed()) return;
+    var hero = document.querySelector(".hero");
+    var frame = document.querySelector(".hero-frame");
+    if (!hero || !frame) return;
+
+    var chip = document.querySelector(".hero-chip");
+    var glow = document.createElement("div");
+    glow.className = "hero-glow";
+    hero.insertBefore(glow, hero.firstChild);
+
+    var raf = 0, lastE = null;
+    var render = function () {
+      raf = 0;
+      if (!lastE) return;
+      var r = hero.getBoundingClientRect();
+      var nx = (lastE.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5
+      var ny = (lastE.clientY - r.top) / r.height - 0.5;
+      frame.style.transform =
+        "translate3d(" + (nx * -20).toFixed(1) + "px," + (ny * -16).toFixed(1) +
+        "px,0) rotateX(" + (ny * -4).toFixed(2) + "deg) rotateY(" + (nx * 6).toFixed(2) + "deg)";
+      if (chip) chip.style.transform =
+        "translate3d(" + (nx * 26).toFixed(1) + "px," + (ny * 20).toFixed(1) + "px,0)";
+      glow.style.left = (lastE.clientX - r.left) + "px";
+      glow.style.top = (lastE.clientY - r.top) + "px";
+    };
+
+    hero.addEventListener("mouseenter", function () { glow.style.opacity = "1"; });
+    hero.addEventListener("mousemove", function (e) {
+      lastE = e;
+      if (!raf) raf = requestAnimationFrame(render);
+    }, { passive: true });
+    hero.addEventListener("mouseleave", function () {
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      glow.style.opacity = "0";
+      frame.style.transform = "";
+      if (chip) chip.style.transform = "";
+    });
+  }
+
   /* -------- Initialisation -------- */
   document.addEventListener("DOMContentLoaded", function () {
     buildGallery();
@@ -183,5 +287,7 @@
     initScrollSpy();
     initHours();
     initYear();
+    initTilt();
+    initHeroParallax();
   });
 })();
