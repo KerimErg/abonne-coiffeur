@@ -1,22 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Portrait — Aboné Coiffeur">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Coupe homme et barbe — Aboné Coiffeur">
   <rect width="900" height="1080" fill="#E7EBF0"/>
-  <circle cx="470" cy="440" r="330" fill="#C6D0DC"/>
+  <circle cx="452" cy="430" r="330" fill="#C6D0DC"/>
+  <!-- profil masculin (face à gauche) : cheveux courts + barbe -->
   <path d="M250 1080
-    C300 920, 362 852, 432 772
-    C472 726, 432 700, 416 675
-    C406 660, 388 646, 372 626
-    C356 604, 344 592, 350 570
-    C356 548, 388 530, 396 490
-    C402 456, 412 440, 442 422
-    C512 384, 542 368, 610 350
-    C690 328, 732 402, 746 532
-    C766 674, 760 822, 720 970
-    C705 1028, 700 1050, 700 1080
+    C300 900, 352 858, 412 820
+    C398 806, 384 792, 384 770
+    C384 748, 372 742, 360 726
+    C348 712, 338 704, 340 686
+    C298 678, 300 628, 322 604
+    C300 566, 322 470, 396 452
+    C470 434, 560 452, 606 500
+    C654 552, 660 636, 646 712
+    C640 770, 660 806, 700 848
+    C742 890, 762 984, 762 1080
     Z" fill="#14263F"/>
-  <g fill="none" stroke="#E7EBF0" stroke-opacity="0.4" stroke-width="5" stroke-linecap="round">
-    <path d="M560 342 C690 402, 720 626, 690 872"/>
-    <path d="M520 374 C640 446, 665 654, 640 872"/>
-  </g>
-  <circle cx="452" cy="626" r="10" fill="#B98A5E"/>
-  <path d="M452 626 l0 26" stroke="#B98A5E" stroke-width="3" stroke-linecap="round"/>
+  <!-- nez / lèvre (léger dégagement clair du profil) -->
+  <path d="M322 604 C312 612, 306 624, 314 636 C320 646, 332 648, 340 642"
+        fill="none" stroke="#C6D0DC" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+  <!-- ligne de barbe (accent cuivre discret) -->
+  <path d="M348 686 C 372 720, 372 760, 402 796"
+        fill="none" stroke="#B98A5E" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <!-- ligne de dégradé (nuque) -->
+  <path d="M636 700 C 648 740, 654 780, 690 828"
+        fill="none" stroke="#B98A5E" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
 </svg>

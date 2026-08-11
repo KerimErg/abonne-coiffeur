@@ -1,12 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Chignon et coiffure de mariage">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Taille de barbe">
   <rect width="600" height="600" fill="#F4F2EC"/>
-  <g transform="translate(300,320)" fill="none" stroke="#14263F" stroke-width="9" stroke-linecap="round">
-    <circle cx="0" cy="-6" r="76"/>
-    <path d="M-76 -6 C -150 -66, -150 66, -76 44"/>
-    <path d="M76 -6 C 150 -66, 150 66, 76 44"/>
+  <!-- moustache -->
+  <path d="M300 250
+    C 270 232, 232 232, 206 250
+    C 180 268, 168 262, 158 250
+    C 176 288, 232 300, 300 288
+    C 368 300, 424 288, 442 250
+    C 432 262, 420 268, 394 250
+    C 368 232, 330 232, 300 250 Z" fill="#14263F"/>
+  <!-- barbe -->
+  <path d="M186 300
+    C 196 372, 240 430, 300 452
+    C 360 430, 404 372, 414 300
+    C 384 330, 344 342, 300 342
+    C 256 342, 216 330, 186 300 Z" fill="#14263F"/>
+  <!-- lèvre (accent) -->
+  <path d="M262 302 q38 22 76 0" fill="none" stroke="#B98A5E" stroke-width="6" stroke-linecap="round"/>
+  <!-- peigne à barbe -->
+  <g transform="translate(300,150)">
+    <rect x="-70" y="-14" width="140" height="16" rx="6" fill="#5C6B80"/>
+    <g stroke="#5C6B80" stroke-width="4">
+      <path d="M-60 2 v18 M-46 2 v18 M-32 2 v18 M-18 2 v18 M-4 2 v18 M10 2 v18 M24 2 v18 M38 2 v18 M52 2 v18"/>
+    </g>
   </g>
-  <g fill="#B98A5E">
-    <circle cx="300" cy="150" r="11"/><circle cx="332" cy="176" r="8"/><circle cx="268" cy="176" r="8"/><circle cx="300" cy="196" r="6"/>
-  </g>
-  <g fill="#5C6B80"><circle cx="360" cy="210" r="6"/><circle cx="240" cy="210" r="6"/></g>
 </svg>
