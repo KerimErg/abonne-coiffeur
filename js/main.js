@@ -1,110 +1,159 @@
 /* ============================================================
    Aboné Coiffeur — Bischheim
-   Interactions : menu, apparitions, navigation, horaires
-   HTML/CSS/JS simple et léger — aucune dépendance.
+   Interactions : en-tête, menu, révélations, repère, horaires.
+   Trois comportements de mouvement seulement :
+   1. Entrée du Hero  (ligne de coupe + montée des mots)
+   2. Révélation au défilement (montée douce)
+   3. Survol (géré en CSS)
+   Respecte prefers-reduced-motion ; simplifié sur mobile.
+   Aucune dépendance.
    ============================================================ */
 (function () {
   "use strict";
 
-  /* -------- En-tête : fond au défilement -------- */
-  function initHeaderScroll() {
-    var header = document.getElementById("siteHeader");
-    if (!header) return;
-    var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 20); };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var isMobile = window.matchMedia("(max-width: 960px)").matches;
+
+  /* -------- 1. En-tête : ombre/fond au défilement -------- */
+  function initHeader() {
+    var hd = document.getElementById("hd");
+    if (!hd) return;
+    var onScroll = function () { hd.classList.toggle("scrolled", window.scrollY > 12); };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
   /* -------- Menu mobile -------- */
-  function initMobileNav() {
-    var toggle = document.getElementById("navToggle");
-    var nav = document.getElementById("mainNav");
-    if (!toggle || !nav) return;
+  function initNav() {
+    var burger = document.getElementById("burger");
+    var nav = document.getElementById("nav");
+    var hd = document.getElementById("hd");
+    if (!burger || !nav) return;
+
     var close = function () {
       nav.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Ouvrir le menu");
+      if (hd) hd.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+      burger.setAttribute("aria-label", "Ouvrir le menu");
     };
     var open = function () {
       nav.classList.add("open");
-      toggle.setAttribute("aria-expanded", "true");
-      toggle.setAttribute("aria-label", "Fermer le menu");
+      if (hd) hd.classList.add("open");
+      burger.setAttribute("aria-expanded", "true");
+      burger.setAttribute("aria-label", "Fermer le menu");
     };
-    toggle.addEventListener("click", function () {
-      if (nav.classList.contains("open")) { close(); } else { open(); }
+    burger.addEventListener("click", function () {
+      if (nav.classList.contains("open")) close(); else open();
     });
-    nav.addEventListener("click", function (e) { if (e.target.tagName === "A") close(); });
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 960) close();
+    });
   }
 
-  /* -------- Apparition douce au défilement -------- */
+  /* -------- Entrée du Hero : ligne de coupe + montée des mots -------- */
+  function initHeroEntry() {
+    var h1 = document.querySelector(".hero-h1");
+    var scan = document.querySelector(".hero-scan");
+    var ruler = document.querySelector(".ruler");
+
+    var play = function () {
+      if (h1) h1.classList.add("in");
+      if (scan) scan.classList.add("in");
+      if (ruler) ruler.classList.add("lit");
+    };
+
+    if (reduce) { play(); return; }
+    // laisse la page peindre, puis joue l'entrée
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(play);
+    });
+  }
+
+  /* -------- 2. Révélation au défilement -------- */
   function initReveal() {
-    var els = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window) || !els.length) {
+    var els = document.querySelectorAll("[data-reveal]");
+    if (!els.length) return;
+
+    if (reduce || !("IntersectionObserver" in window)) {
       els.forEach(function (el) { el.classList.add("in"); });
       return;
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (el) { io.observe(el); });
   }
 
-  /* -------- Navigation active (scrollspy) -------- */
-  function initScrollSpy() {
-    var links = Array.prototype.slice.call(document.querySelectorAll(".main-nav a"));
-    var map = {};
-    links.forEach(function (l) {
-      var t = document.querySelector(l.getAttribute("href"));
-      if (t) map[t.id] = l;
-    });
-    var targets = Object.keys(map).map(function (id) { return document.getElementById(id); });
-    if (!targets.length || !("IntersectionObserver" in window)) return;
+  /* -------- Repère latéral + navigation active (scrollspy) -------- */
+  function initSpy() {
+    var tag = document.getElementById("rulerTag");
+    var sections = Array.prototype.slice.call(
+      document.querySelectorAll("section[id]")
+    );
+    var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
+    if (!sections.length || !("IntersectionObserver" in window)) return;
+
+    var labels = {
+      accueil: "00 · Accueil",
+      principe: "01 · Le principe",
+      prestations: "02 · Prestations",
+      studio: "03 · Le studio",
+      horaires: "04 · Horaires",
+      contact: "05 · Contact"
+    };
+
+    var setActive = function (id) {
+      links.forEach(function (l) {
+        var href = l.getAttribute("href") || "";
+        l.classList.toggle("active", href === "#" + id);
+      });
+      if (tag && labels[id]) tag.textContent = labels[id];
+    };
+
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          links.forEach(function (l) { l.classList.remove("active"); });
-          if (map[entry.target.id]) map[entry.target.id].classList.add("active");
-        }
+        if (entry.isIntersecting) setActive(entry.target.id);
       });
     }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
-    targets.forEach(function (t) { spy.observe(t); });
+    sections.forEach(function (s) { spy.observe(s); });
   }
 
   /* -------- Horaires : jour courant + ouvert/fermé --------
-     Horaires vérifiés : lundi à samedi 9h–19h, dimanche fermé.     */
+     Horaires vérifiés : lundi à samedi 9h–19h, dimanche fermé. */
   function initHours() {
-    var OPEN_HOUR = 9, CLOSE_HOUR = 19;
+    var OPEN = 9, CLOSE = 19;
     var now = new Date();
     var day = now.getDay();
     var hour = now.getHours() + now.getMinutes() / 60;
 
-    document.querySelectorAll(".hours-list li").forEach(function (li) {
-      if (parseInt(li.getAttribute("data-day"), 10) === day) { li.classList.add("today"); }
+    document.querySelectorAll(".tt li[data-day]").forEach(function (li) {
+      if (parseInt(li.getAttribute("data-day"), 10) === day) li.classList.add("today");
     });
 
-    var statusEl = document.getElementById("hoursStatus");
-    if (!statusEl) return;
+    var el = document.getElementById("hoursStatus");
+    if (!el) return;
 
-    var isOpenDay = day >= 1 && day <= 6;
-    var isOpen = isOpenDay && hour >= OPEN_HOUR && hour < CLOSE_HOUR;
+    var openDay = day >= 1 && day <= 6;
+    var isOpen = openDay && hour >= OPEN && hour < CLOSE;
 
     if (isOpen) {
-      statusEl.classList.remove("closed");
-      statusEl.textContent = "Ouvert maintenant · jusqu'à 19h00";
+      el.classList.remove("closed");
+      el.textContent = "Ouvert · jusqu'à 19h00";
     } else {
-      statusEl.classList.add("closed");
-      if (isOpenDay && hour < OPEN_HOUR) {
-        statusEl.textContent = "Fermé · ouvre aujourd'hui à 09h00";
-      } else if (day === 6) {
-        statusEl.textContent = "Fermé · réouverture lundi à 09h00";
-      } else if (day === 0) {
-        statusEl.textContent = "Fermé le dimanche · réouverture lundi à 09h00";
-      } else {
-        statusEl.textContent = "Fermé · réouverture demain à 09h00";
-      }
+      el.classList.add("closed");
+      if (openDay && hour < OPEN) el.textContent = "Fermé · ouvre à 09h00";
+      else if (day === 6) el.textContent = "Fermé · réouverture lundi 09h00";
+      else if (day === 0) el.textContent = "Fermé le dimanche · lundi 09h00";
+      else el.textContent = "Fermé · réouverture demain 09h00";
     }
   }
 
@@ -115,10 +164,11 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initHeaderScroll();
-    initMobileNav();
+    initHeader();
+    initNav();
+    initHeroEntry();
     initReveal();
-    initScrollSpy();
+    if (!isMobile) initSpy();
     initHours();
     initYear();
   });

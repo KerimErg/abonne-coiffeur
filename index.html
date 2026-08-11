@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aboné Coiffeur — Coiffeur homme & barbier à Bischheim</title>
-  <meta name="description" content="Aboné Coiffeur, coiffeur homme & barbier au 8 rue du Général Leclerc à Bischheim (67800). Coupe homme, dégradé / fade, coupe + barbe, taille de barbe, contours, coupe enfant garçon. Ouvert du lundi au samedi, 9h–19h. Tél. 03 88 33 39 47." />
-  <meta name="theme-color" content="#0E1F38" />
+  <title>Aboné Coiffeur — Barbier & coiffeur homme à Bischheim</title>
+  <meta name="description" content="Aboné Coiffeur, barbier & coiffeur homme au 8 rue du Général Leclerc à Bischheim (67800). Coupe homme, dégradé / fade, coupe + barbe, taille de barbe, contours. Avec ou sans rendez-vous, du lundi au samedi 9h–19h. Tél. 03 88 33 39 47." />
+  <meta name="theme-color" content="#101d2b" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aboné Coiffeur — Coiffeur homme & barbier à Bischheim" />
-  <meta property="og:description" content="Coiffeur homme & barbier à Bischheim. Coupe, dégradé, barbe et contours. Ouvert du lundi au samedi." />
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="Aboné Coiffeur — Barbier & coiffeur homme à Bischheim" />
+  <meta property="og:description" content="Coupe homme, dégradé & barbe, avec précision. Au 8 rue du Général Leclerc à Bischheim. Avec ou sans rendez-vous, lundi au samedi." />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="images/hero-portrait.svg" />
+  <meta property="og:image" content="images/facade abone.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
@@ -25,296 +25,208 @@
     "@context": "https://schema.org",
     "@type": "HairSalon",
     "name": "Aboné Coiffeur",
-    "image": "images/hero-portrait.svg",
+    "description": "Barbier et coiffeur homme à Bischheim : coupe, dégradé, barbe et contours.",
+    "image": "images/facade abone.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "8 rue du Général Leclerc",
       "postalCode": "67800",
       "addressLocality": "Bischheim",
+      "addressRegion": "Grand Est",
       "addressCountry": "FR"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": 48.6094, "longitude": 7.7519 },
     "telephone": "+33388333947",
-    "url": "",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      }
-    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00", "closes": "19:00"
+    }],
     "priceRange": "€€"
   }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#accueil">Aller au contenu</a>
+  <a class="skip" href="#principe">Aller au contenu</a>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a href="#accueil" class="brand" aria-label="Aboné Coiffeur — accueil">
-        <span class="brand-name">Aboné</span>
-        <span class="brand-word">Coiffeur</span>
+  <!-- Règle graduée — signature « précision » (décoratif) -->
+  <div class="ruler" aria-hidden="true"><span class="ruler-tag" id="rulerTag">00 · Accueil</span></div>
+
+  <header class="hd" id="hd">
+    <div class="wrap hd-in">
+      <a class="logo" href="#accueil" aria-label="Aboné Coiffeur — accueil">
+        <span class="logo-name">Aboné</span><span class="logo-tag">Coiffeur</span>
       </a>
-
-      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-        <a href="#salon">Le salon</a>
-        <a href="#prestations">Prestations</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#horaires">Horaires</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#prestations"><span class="num">01</span> Prestations</a>
+        <a href="#studio"><span class="num">02</span> Le studio</a>
+        <a href="#horaires"><span class="num">03</span> Horaires</a>
+        <a href="#contact"><span class="num">04</span> Contact</a>
       </nav>
-
-      <div class="header-actions">
-        <a class="header-phone" href="tel:+33388333947">
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
-          <span>03 88 33 39 47</span>
-        </a>
-        <a class="btn btn-primary" href="tel:+33388333947">Prendre rendez-vous</a>
+      <div class="hd-cta">
+        <a class="tel" href="tel:+33388333947">03&nbsp;88&nbsp;33&nbsp;39&nbsp;47</a>
+        <a class="btn btn-solid" href="tel:+33388333947">Prendre rendez-vous</a>
       </div>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
-        <span></span><span></span>
-      </button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
     </div>
   </header>
 
   <main>
-    <!-- ===================== ACCUEIL / HERO ===================== -->
+    <!-- ============ HERO ============ -->
     <section class="hero" id="accueil">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="hero-kicker reveal"><span class="line" aria-hidden="true"></span> Coiffeur homme · Barbier · Bischheim</p>
-          <h1 class="hero-title reveal">Aboné<span>Coiffeur</span></h1>
-          <p class="hero-lead reveal">Coupe homme, dégradé, barbe &amp; contours — un salon de coiffure homme au style précis et net, au cœur de Bischheim.</p>
-          <div class="hero-cta reveal">
-            <a class="btn btn-primary btn-lg" href="tel:+33388333947">Prendre rendez-vous</a>
-            <a class="btn btn-outline-light btn-lg" href="tel:+33388333947">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
-              Appeler le salon
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual reveal">
-          <figure class="hero-frame">
-            <img src="images/hero-portrait.svg" alt="Coupe homme et barbe au salon Aboné Coiffeur" />
-          </figure>
-        </div>
-      </div>
+      <div class="wrap hero-in">
+        <p class="mono hero-loc">Coiffeur homme · Barbier<br />Bischheim — Bas-Rhin (67)</p>
 
-      <div class="container hero-strip reveal">
-        <div class="strip-item"><span class="strip-k">Adresse</span><span class="strip-v">8 rue du Général Leclerc, Bischheim</span></div>
-        <div class="strip-item"><span class="strip-k">Horaires</span><span class="strip-v">Lundi – Samedi · 9h – 19h</span></div>
-        <div class="strip-item"><span class="strip-k">Avis Google</span><span class="strip-v">4,5 / 5 · Coiffeur homme</span></div>
-      </div>
-    </section>
+        <h1 class="hero-h1">
+          <span class="mono hero-no">N°00</span>
+          <span class="hero-word" data-reveal-word>Aboné</span>
+          <span class="hero-word2" data-reveal-word>Coiffeur</span>
+        </h1>
 
-    <!-- ===================== LE SALON / NOUS TROUVER ===================== -->
-    <section class="section salon" id="salon">
-      <div class="container">
-        <div class="salon-panel reveal">
-          <figure class="salon-photo">
-            <img src="images/facade%20abone.png" alt="Façade du salon Aboné Coiffeur, 8 rue du Général Leclerc à Bischheim" loading="lazy" />
-          </figure>
-          <div class="salon-info">
-            <p class="eyebrow">Le salon · Nous trouver</p>
-            <h2 class="salon-title">Coiffeur homme &amp; barbier<br />au cœur de Bischheim</h2>
-            <p class="salon-lead">Au 8 rue du Général Leclerc, Aboné Coiffeur vous accueille pour une coupe précise, un dégradé net et une barbe soignée — dans une ambiance détendue, avec ou sans rendez-vous.</p>
-            <ul class="salon-meta">
-              <li><span class="k">Adresse</span><span class="v">8 rue du Général Leclerc, 67800 Bischheim</span></li>
-              <li><span class="k">Téléphone</span><span class="v"><a href="tel:+33388333947">03 88 33 39 47</a></span></li>
-              <li><span class="k">Horaires</span><span class="v">Lundi – Samedi · 9h – 19h</span></li>
-            </ul>
-            <div class="salon-cta">
-              <a class="btn btn-itinerary" href="https://www.google.com/maps/search/?api=1&query=Abon%C3%A9%20Coiffeur%2C%208%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
-                Itinéraire
-              </a>
-              <a class="btn btn-outline-light" href="tel:+33388333947">Appeler le salon</a>
-            </div>
-          </div>
+        <p class="hero-lead">Coupe homme, dégradé &amp; barbe — <em>la précision avant tout</em>. Au 8&nbsp;rue du Général&nbsp;Leclerc, avec ou sans rendez-vous.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-solid btn-lg" href="tel:+33388333947">Prendre rendez-vous</a>
+          <a class="btn btn-line btn-lg" href="tel:+33388333947">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>
+            Appeler · 03 88 33 39 47
+          </a>
         </div>
+
+        <figure class="hero-print">
+          <img src="images/facade abone.png" width="703" height="391" alt="Devanture du salon Aboné Coiffeur au 8 rue du Général Leclerc à Bischheim" />
+          <figcaption class="mono">8 r. du Général Leclerc<br />48.61°N · 7.75°E</figcaption>
+        </figure>
+
+        <p class="mono hero-foot">Sans rendez-vous possible — Lundi › Samedi · 9h–19h</p>
+        <span class="hero-scan" aria-hidden="true"></span>
       </div>
     </section>
 
-    <!-- ===================== PRESTATIONS ===================== -->
-    <section class="section prestations" id="prestations">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Prestations</p>
-          <h2 class="section-title">Nos prestations homme</h2>
-          <p class="section-intro">Coupe, barbe et contours, réalisés avec précision. Les tarifs vous sont communiqués au salon ou par téléphone, selon la prestation.</p>
-        </div>
-
-        <ul class="presta-list">
-          <li class="presta-row reveal">
-            <span class="presta-num">01</span>
-            <div class="presta-body"><h3>Coupe homme</h3><p>Coupe classique ou tendance, avec shampoing et coiffage, adaptée à votre style.</p></div>
-            <span class="presta-line" aria-hidden="true"></span>
-          </li>
-          <li class="presta-row reveal">
-            <span class="presta-num">02</span>
-            <div class="presta-body"><h3>Dégradé / Fade</h3><p>Dégradé américain, fade et transitions nettes travaillés à la tondeuse.</p></div>
-            <span class="presta-line" aria-hidden="true"></span>
-          </li>
-          <li class="presta-row reveal">
-            <span class="presta-num">03</span>
-            <div class="presta-body"><h3>Coupe + barbe</h3><p>La prestation complète : cheveux travaillés et barbe taillée et dessinée.</p></div>
-            <span class="presta-line" aria-hidden="true"></span>
-          </li>
-          <li class="presta-row reveal">
-            <span class="presta-num">04</span>
-            <div class="presta-body"><h3>Taille de barbe</h3><p>Taille, mise en forme et entretien de la barbe pour un rendu net et soigné.</p></div>
-            <span class="presta-line" aria-hidden="true"></span>
-          </li>
-          <li class="presta-row reveal">
-            <span class="presta-num">05</span>
-            <div class="presta-body"><h3>Contours</h3><p>Contours et finitions à la tondeuse ou au rasoir pour une netteté parfaite.</p></div>
-            <span class="presta-line" aria-hidden="true"></span>
-          </li>
-          <li class="presta-row reveal">
-            <span class="presta-num">06</span>
-            <div class="presta-body"><h3>Coupe enfant garçon</h3><p>Coupe adaptée aux plus jeunes, dans une ambiance détendue et rassurante.</p></div>
-            <span class="presta-line" aria-hidden="true"></span>
-          </li>
-        </ul>
-
-        <p class="presta-note reveal">Une demande particulière ? <a href="tel:+33388333947">Appelez le salon au 03&nbsp;88&nbsp;33&nbsp;39&nbsp;47</a>.</p>
+    <!-- ============ PRINCIPE ============ -->
+    <section class="principe" id="principe">
+      <div class="wrap principe-in">
+        <p class="mono lbl" data-reveal>N°01 — Le principe</p>
+        <p class="principe-txt" data-reveal>La coupe <strong>nette</strong>. Le dégradé <strong>propre</strong>. La barbe <strong>dessinée</strong>. On travaille le détail qui change une tête — et on prend le temps qu'il faut.</p>
       </div>
     </section>
 
-    <!-- ===================== GALERIE ===================== -->
-    <section class="section galerie" id="galerie">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Galerie</p>
-          <h2 class="section-title">Le salon en images</h2>
-        </div>
-        <div class="gallery">
-          <figure class="gallery-item wide reveal"><img src="images/gallery-1.svg" alt="Coupe homme au salon Aboné Coiffeur" loading="lazy" /><figcaption>Coupe homme</figcaption></figure>
-          <figure class="gallery-item reveal"><img src="images/gallery-2.svg" alt="Soin et entretien de la barbe" loading="lazy" /><figcaption>Soin &amp; barbe</figcaption></figure>
-          <figure class="gallery-item reveal"><img src="images/gallery-3.svg" alt="Rasage et contours au rasoir" loading="lazy" /><figcaption>Rasage &amp; contours</figcaption></figure>
-          <figure class="gallery-item reveal"><img src="images/gallery-4.svg" alt="Coiffage et finitions" loading="lazy" /><figcaption>Coiffage</figcaption></figure>
-          <figure class="gallery-item reveal"><img src="images/gallery-5.svg" alt="Taille de barbe au salon" loading="lazy" /><figcaption>Taille de barbe</figcaption></figure>
-          <figure class="gallery-item wide reveal"><img src="images/gallery-6.svg" alt="Ambiance du salon Aboné Coiffeur" loading="lazy" /><figcaption>Le salon</figcaption></figure>
-        </div>
+    <!-- ============ PRESTATIONS ============ -->
+    <section class="presta" id="prestations">
+      <div class="wrap presta-in">
+        <aside class="presta-head">
+          <p class="mono lbl" data-reveal>N°02 — Prestations</p>
+          <h2 class="h2" data-reveal>Ce qu'on<br />fait bien.</h2>
+          <p class="presta-note">Tarifs communiqués au studio ou par téléphone, selon la prestation.</p>
+        </aside>
+
+        <ol class="presta-list">
+          <li class="prow feat" data-reveal>
+            <span class="mono prow-no">03</span>
+            <div class="prow-b"><h3>Coupe + barbe</h3><p>La prestation complète : cheveux travaillés, barbe taillée et dessinée. Le combo signature.</p></div>
+            <span class="prow-mk mono" aria-hidden="true">↗</span>
+          </li>
+          <li class="prow" data-reveal>
+            <span class="mono prow-no">01</span>
+            <div class="prow-b"><h3>Coupe homme</h3><p>Coupe classique ou tendance, shampoing et coiffage, adaptée à votre style.</p></div>
+            <span class="prow-mk mono" aria-hidden="true">↗</span>
+          </li>
+          <li class="prow" data-reveal>
+            <span class="mono prow-no">02</span>
+            <div class="prow-b"><h3>Dégradé / Fade</h3><p>Dégradé américain, fade et transitions nettes, travaillés à la tondeuse.</p></div>
+            <span class="prow-mk mono" aria-hidden="true">↗</span>
+          </li>
+          <li class="prow" data-reveal>
+            <span class="mono prow-no">04</span>
+            <div class="prow-b"><h3>Taille de barbe</h3><p>Taille, mise en forme et entretien de la barbe, pour un rendu soigné.</p></div>
+            <span class="prow-mk mono" aria-hidden="true">↗</span>
+          </li>
+          <li class="prow" data-reveal>
+            <span class="mono prow-no">05</span>
+            <div class="prow-b"><h3>Contours</h3><p>Contours et finitions à la tondeuse ou au rasoir, pour une netteté parfaite.</p></div>
+            <span class="prow-mk mono" aria-hidden="true">↗</span>
+          </li>
+          <li class="prow" data-reveal>
+            <span class="mono prow-no">06</span>
+            <div class="prow-b"><h3>Coupe enfant garçon</h3><p>Coupe adaptée aux plus jeunes, dans une ambiance détendue.</p></div>
+            <span class="prow-mk mono" aria-hidden="true">↗</span>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- ===================== HORAIRES ===================== -->
-    <section class="section horaires" id="horaires">
-      <div class="container grid-2">
-        <div class="hours-copy">
-          <p class="eyebrow reveal">Horaires</p>
-          <h2 class="section-title reveal">Nos horaires d'ouverture</h2>
-          <p class="reveal">Nous vous accueillons <strong>du lundi au samedi</strong>. Pour garantir votre créneau, réservez de préférence par téléphone ; l'accueil sans rendez-vous reste possible selon les disponibilités.</p>
-          <div class="hours-cta reveal">
-            <a class="btn btn-primary" href="tel:+33388333947">Appeler le salon</a>
-            <a class="btn btn-outline-light" href="#contact">Voir l'itinéraire</a>
-          </div>
-        </div>
-        <div class="hours-card reveal">
-          <ul class="hours-list">
-            <li data-day="1"><span>Lundi</span><span>09h00 – 19h00</span></li>
-            <li data-day="2"><span>Mardi</span><span>09h00 – 19h00</span></li>
-            <li data-day="3"><span>Mercredi</span><span>09h00 – 19h00</span></li>
-            <li data-day="4"><span>Jeudi</span><span>09h00 – 19h00</span></li>
-            <li data-day="5"><span>Vendredi</span><span>09h00 – 19h00</span></li>
-            <li data-day="6"><span>Samedi</span><span>09h00 – 19h00</span></li>
-            <li data-day="0" class="is-closed"><span>Dimanche</span><span>Fermé</span></li>
+    <!-- ============ STUDIO (bande sombre, vraie photo) ============ -->
+    <section class="studio" id="studio">
+      <figure class="studio-media">
+        <img src="images/facade abone.png" width="703" height="391" loading="lazy" alt="Façade et vitrine du salon Aboné Coiffeur, rue du Général Leclerc à Bischheim" />
+      </figure>
+      <div class="studio-panel">
+        <p class="mono lbl light" data-reveal>N°02 — Le studio</p>
+        <h2 class="h2 light" data-reveal>Rue du Général<br />Leclerc, Bischheim.</h2>
+        <p class="studio-txt" data-reveal>La vraie devanture, au cœur de Bischheim. On vous y accueille du lundi au samedi, avec ou sans rendez-vous.</p>
+        <dl class="studio-meta">
+          <div><dt class="mono">Adresse</dt><dd>8 rue du Général Leclerc, 67800 Bischheim</dd></div>
+          <div><dt class="mono">Ouverture</dt><dd>Lundi – Samedi · 9h – 19h</dd></div>
+        </dl>
+        <a class="btn btn-brass btn-lg" href="https://www.google.com/maps/search/?api=1&query=Abon%C3%A9%20Coiffeur%2C%208%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim" target="_blank" rel="noopener">Itinéraire <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <!-- ============ INFOS PRATIQUES (horaires + contact + carte) ============ -->
+    <section class="infos" id="horaires">
+      <div class="wrap infos-in">
+        <div class="infos-hours">
+          <p class="mono lbl" data-reveal>N°03 — Horaires</p>
+          <ul class="tt">
+            <li data-day="1"><span class="mono d">Lun</span><span class="h">09 — 19</span></li>
+            <li data-day="2"><span class="mono d">Mar</span><span class="h">09 — 19</span></li>
+            <li data-day="3"><span class="mono d">Mer</span><span class="h">09 — 19</span></li>
+            <li data-day="4"><span class="mono d">Jeu</span><span class="h">09 — 19</span></li>
+            <li data-day="5"><span class="mono d">Ven</span><span class="h">09 — 19</span></li>
+            <li data-day="6"><span class="mono d">Sam</span><span class="h">09 — 19</span></li>
+            <li data-day="0" class="off"><span class="mono d">Dim</span><span class="h">Fermé</span></li>
           </ul>
-          <p class="hours-status" id="hoursStatus" aria-live="polite"></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== CONTACT + MAP ===================== -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Contact</p>
-          <h2 class="section-title">Venir au salon</h2>
-          <p class="section-intro">Au 8 rue du Général Leclerc à Bischheim. Un renseignement, un rendez-vous ? Nous sommes à votre écoute.</p>
+          <p class="status" id="hoursStatus" aria-live="polite"></p>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-info reveal">
-            <div class="info-block">
-              <span class="info-k">Adresse</span>
-              <p class="info-v">8 rue du Général Leclerc<br />67800 Bischheim</p>
-              <a class="info-link" href="https://www.google.com/maps/search/?api=1&query=Abon%C3%A9%20Coiffeur%2C%208%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim" target="_blank" rel="noopener">Itinéraire Google Maps <span aria-hidden="true">↗</span></a>
-            </div>
-            <div class="info-block">
-              <span class="info-k">Téléphone</span>
-              <p class="info-v"><a href="tel:+33388333947">03 88 33 39 47</a></p>
-            </div>
-            <div class="info-block">
-              <span class="info-k">Horaires</span>
-              <p class="info-v">Lundi – Samedi : 9h – 19h<br />Dimanche : fermé</p>
-            </div>
-            <div class="contact-cta">
-              <a class="btn btn-primary btn-block" href="tel:+33388333947">Prendre rendez-vous</a>
-              <a class="btn btn-outline btn-block" href="tel:+33388333947">Appeler · 03 88 33 39 47</a>
-            </div>
-
-            <!-- Réseaux sociaux : à activer dès que les pages officielles seront confirmées.
-                 Décommentez et renseignez les liens réels ci-dessous.
-            <div class="socials">
-              <a href="#" aria-label="Instagram" rel="noopener">Instagram</a>
-              <a href="#" aria-label="Facebook" rel="noopener">Facebook</a>
-            </div>
-            -->
+        <div class="infos-contact" id="contact">
+          <p class="mono lbl" data-reveal>N°04 — Contact</p>
+          <a class="big-tel" href="tel:+33388333947">03&nbsp;88&nbsp;33&nbsp;39&nbsp;47</a>
+          <address class="addr">8 rue du Général Leclerc<br />67800 Bischheim</address>
+          <div class="infos-cta">
+            <a class="btn btn-solid btn-lg" href="tel:+33388333947">Prendre rendez-vous</a>
+            <a class="btn btn-line btn-lg" href="https://www.google.com/maps/search/?api=1&query=Abon%C3%A9%20Coiffeur%2C%208%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim" target="_blank" rel="noopener">Itinéraire ↗</a>
           </div>
-
-          <figure class="contact-map reveal">
-            <iframe
-              title="Carte — Aboné Coiffeur, 8 rue du Général Leclerc, Bischheim"
-              src="https://www.google.com/maps?q=8%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen></iframe>
-          </figure>
         </div>
+
+        <figure class="infos-map">
+          <iframe title="Plan — Aboné Coiffeur, 8 rue du Général Leclerc, Bischheim"
+            src="https://www.google.com/maps?q=8%20rue%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2C%2067800%20Bischheim&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </figure>
       </div>
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <a href="#accueil" class="footer-brand">
-          <span class="brand-name">Aboné</span><span class="brand-word">Coiffeur</span>
-        </a>
-        <nav class="footer-nav" aria-label="Navigation pied de page">
-          <a href="#accueil">Accueil</a>
-          <a href="#salon">Le salon</a>
-          <a href="#prestations">Prestations</a>
-          <a href="#galerie">Galerie</a>
-          <a href="#horaires">Horaires</a>
-          <a href="#contact">Contact</a>
+  <footer class="ft">
+    <div class="wrap ft-in">
+      <div class="ft-top">
+        <p class="mono">Aboné Coiffeur — Barbier · Bischheim (67)</p>
+        <nav class="ft-nav" aria-label="Pied de page">
+          <a href="#prestations">Prestations</a><a href="#studio">Le studio</a><a href="#horaires">Horaires</a><a href="#contact">Contact</a>
         </nav>
-        <div class="footer-contact">
-          <p>8 rue du Général Leclerc<br />67800 Bischheim</p>
-          <p><a href="tel:+33388333947">03 88 33 39 47</a></p>
-          <p>Lundi au samedi · 9h – 19h</p>
-        </div>
       </div>
-      <div class="footer-bottom">
-        <p>© <span id="year">2026</span> Aboné Coiffeur — Bischheim</p>
-        <p>Coiffeur homme &amp; barbier · Bischheim</p>
+      <p class="ft-word" aria-hidden="true">Aboné</p>
+      <div class="ft-bottom mono">
+        <span>© <span id="year">2026</span> Aboné Coiffeur</span>
+        <span>8 r. du Général Leclerc · 03 88 33 39 47</span>
       </div>
     </div>
   </footer>
 
-  <!-- Barre d'action mobile -->
-  <div class="mobile-bar">
-    <a class="mobile-bar-btn call" href="tel:+33388333947">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" fill="currentColor"/></svg>
-      <span>Appeler</span>
-    </a>
-    <a class="mobile-bar-btn rdv" href="tel:+33388333947">Prendre rendez-vous</a>
+  <div class="dock" aria-hidden="false">
+    <a class="dock-tel" href="tel:+33388333947"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" fill="currentColor"/></svg> Appeler</a>
+    <a class="dock-rdv" href="tel:+33388333947">Prendre rendez-vous</a>
   </div>
 
   <script src="js/main.js"></script>
