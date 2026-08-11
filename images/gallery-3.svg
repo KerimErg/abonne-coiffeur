@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Balayage et mèches">
+  <defs><linearGradient id="a3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3ede3"/><stop offset="1" stop-color="#d8c4a3"/></linearGradient></defs>
+  <rect width="600" height="600" fill="url(#a3)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M120 60 C 220 220, 220 380, 140 560" stroke="#45392f" stroke-opacity="0.5" stroke-width="10"/>
+    <path d="M240 40 C 340 220, 320 400, 250 580" stroke="#96743f" stroke-opacity="0.55" stroke-width="12"/>
+    <path d="M360 60 C 470 220, 450 400, 380 560" stroke="#45392f" stroke-opacity="0.4" stroke-width="9"/>
+    <path d="M470 40 C 560 220, 540 400, 480 580" stroke="#b7935b" stroke-opacity="0.6" stroke-width="11"/>
+  </g>
+</svg>
