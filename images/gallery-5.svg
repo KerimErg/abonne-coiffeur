@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Chignon et coiffure de mariage">
-  <rect width="600" height="600" fill="#f5efe6"/>
-  <g transform="translate(300,320)" fill="none" stroke="#1a1712" stroke-width="9" stroke-linecap="round">
+  <rect width="600" height="600" fill="#F4F2EC"/>
+  <g transform="translate(300,320)" fill="none" stroke="#14263F" stroke-width="9" stroke-linecap="round">
     <circle cx="0" cy="-6" r="76"/>
     <path d="M-76 -6 C -150 -66, -150 66, -76 44"/>
     <path d="M76 -6 C 150 -66, 150 66, 76 44"/>
   </g>
-  <g fill="#b07d5c">
+  <g fill="#B98A5E">
     <circle cx="300" cy="150" r="11"/><circle cx="332" cy="176" r="8"/><circle cx="268" cy="176" r="8"/><circle cx="300" cy="196" r="6"/>
   </g>
+  <g fill="#5C6B80"><circle cx="360" cy="210" r="6"/><circle cx="240" cy="210" r="6"/></g>
 </svg>

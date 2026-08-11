@@ -1,64 +1,16 @@
 /* ============================================================
    Aboné Coiffeur — Bischheim
-   Scripts de l'interface
+   Interactions : menu, apparitions, navigation, horaires
+   HTML/CSS/JS simple et léger — aucune dépendance.
    ============================================================ */
 (function () {
   "use strict";
-
-  /* -------- Galerie --------
-     Pour afficher vos propres photos : déposez vos images dans le
-     dossier /images puis remplacez « src » ci-dessous (ou ajoutez
-     de nouvelles entrées). Voir images/README-PHOTOS.md.
-
-     « wide » = vignette large (2 colonnes).                        */
-  var galleryItems = [
-    { src: "images/gallery-1.svg", alt: "Coupe et coiffage au salon Aboné Coiffeur", caption: "Coupe & coiffage", wide: true },
-    { src: "images/gallery-2.svg", alt: "Coloration réalisée au salon", caption: "Coloration" },
-    { src: "images/gallery-3.svg", alt: "Balayage et jeux de lumière", caption: "Balayage & mèches" },
-    { src: "images/gallery-4.svg", alt: "Brushing et mise en forme", caption: "Brushing & soins" },
-    { src: "images/gallery-5.svg", alt: "Chignon et coiffure de mariage", caption: "Chignon & mariage" },
-    { src: "images/gallery-6.svg", alt: "Ambiance chaleureuse du salon", caption: "Notre ambiance", wide: true }
-  ];
-
-  function buildGallery() {
-    var wrap = document.getElementById("gallery");
-    if (!wrap) return;
-    var frag = document.createDocumentFragment();
-    galleryItems.forEach(function (item, i) {
-      var fig = document.createElement("figure");
-      fig.className = "gallery-item reveal" + (item.wide ? " wide" : "");
-      fig.setAttribute("role", "listitem");
-      fig.style.transitionDelay = (i % 4) * 70 + "ms";
-
-      var img = document.createElement("img");
-      img.src = item.src;
-      img.alt = item.alt || "";
-      img.loading = "lazy";
-
-      var cap = document.createElement("figcaption");
-      cap.textContent = item.caption || "";
-
-      fig.appendChild(img);
-      if (item.caption) fig.appendChild(cap);
-      frag.appendChild(fig);
-    });
-    wrap.appendChild(frag);
-  }
-
-  /* -------- Léger décalage (stagger) pour les groupes -------- */
-  function applyStagger() {
-    document.querySelectorAll(".cards .card.reveal").forEach(function (el, i) {
-      el.style.transitionDelay = (i % 3) * 80 + "ms";
-    });
-  }
 
   /* -------- En-tête : fond au défilement -------- */
   function initHeaderScroll() {
     var header = document.getElementById("siteHeader");
     if (!header) return;
-    var onScroll = function () {
-      header.classList.toggle("scrolled", window.scrollY > 24);
-    };
+    var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 20); };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
@@ -68,7 +20,6 @@
     var toggle = document.getElementById("navToggle");
     var nav = document.getElementById("mainNav");
     if (!toggle || !nav) return;
-
     var close = function () {
       nav.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
@@ -79,19 +30,14 @@
       toggle.setAttribute("aria-expanded", "true");
       toggle.setAttribute("aria-label", "Fermer le menu");
     };
-
     toggle.addEventListener("click", function () {
       if (nav.classList.contains("open")) { close(); } else { open(); }
     });
-    nav.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") close();
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") close();
-    });
+    nav.addEventListener("click", function (e) { if (e.target.tagName === "A") close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   }
 
-  /* -------- Apparition au défilement -------- */
+  /* -------- Apparition douce au défilement -------- */
   function initReveal() {
     var els = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window) || !els.length) {
@@ -100,34 +46,31 @@
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in");
-          io.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (el) { io.observe(el); });
   }
 
   /* -------- Navigation active (scrollspy) -------- */
   function initScrollSpy() {
     var links = Array.prototype.slice.call(document.querySelectorAll(".main-nav a"));
-    var sections = links
-      .map(function (l) { return document.querySelector(l.getAttribute("href")); })
-      .filter(Boolean);
-    if (!sections.length || !("IntersectionObserver" in window)) return;
-
+    var map = {};
+    links.forEach(function (l) {
+      var t = document.querySelector(l.getAttribute("href"));
+      if (t) map[t.id] = l;
+    });
+    var targets = Object.keys(map).map(function (id) { return document.getElementById(id); });
+    if (!targets.length || !("IntersectionObserver" in window)) return;
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          var id = entry.target.id;
-          links.forEach(function (l) {
-            l.classList.toggle("active", l.getAttribute("href") === "#" + id);
-          });
+          links.forEach(function (l) { l.classList.remove("active"); });
+          if (map[entry.target.id]) map[entry.target.id].classList.add("active");
         }
       });
     }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
-    sections.forEach(function (s) { spy.observe(s); });
+    targets.forEach(function (t) { spy.observe(t); });
   }
 
   /* -------- Horaires : jour courant + ouvert/fermé --------
@@ -135,19 +78,17 @@
   function initHours() {
     var OPEN_HOUR = 9, CLOSE_HOUR = 19;
     var now = new Date();
-    var day = now.getDay();            // 0 = dimanche … 6 = samedi
+    var day = now.getDay();
     var hour = now.getHours() + now.getMinutes() / 60;
 
     document.querySelectorAll(".hours-list li").forEach(function (li) {
-      if (parseInt(li.getAttribute("data-day"), 10) === day) {
-        li.classList.add("today");
-      }
+      if (parseInt(li.getAttribute("data-day"), 10) === day) { li.classList.add("today"); }
     });
 
     var statusEl = document.getElementById("hoursStatus");
     if (!statusEl) return;
 
-    var isOpenDay = day >= 1 && day <= 6;      // lundi–samedi
+    var isOpenDay = day >= 1 && day <= 6;
     var isOpen = isOpenDay && hour >= OPEN_HOUR && hour < CLOSE_HOUR;
 
     if (isOpen) {
@@ -173,10 +114,7 @@
     if (y) y.textContent = String(new Date().getFullYear());
   }
 
-  /* -------- Initialisation -------- */
   document.addEventListener("DOMContentLoaded", function () {
-    buildGallery();
-    applyStagger();
     initHeaderScroll();
     initMobileNav();
     initReveal();
