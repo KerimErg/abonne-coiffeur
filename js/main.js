@@ -114,7 +114,90 @@
     if (y) y.textContent = String(new Date().getFullYear());
   }
 
+  var prefersReduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* -------- Lumière douce qui suit le curseur (bureau, après l'intro) ---- */
+  function initHeroCursor(hero, layer) {
+    var tx = 68, ty = 26, cx = 68, cy = 26, raf = 0;
+    function loop() {
+      cx += (tx - cx) * 0.06; cy += (ty - cy) * 0.06;
+      layer.style.setProperty("--cx", cx.toFixed(2) + "%");
+      layer.style.setProperty("--cy", cy.toFixed(2) + "%");
+      if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) { raf = requestAnimationFrame(loop); }
+      else { raf = 0; }
+    }
+    hero.addEventListener("mousemove", function (e) {
+      var r = hero.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width) * 100;
+      ty = ((e.clientY - r.top) / r.height) * 100;
+      if (!raf) { raf = requestAnimationFrame(loop); }
+    }, { passive: true });
+    hero.classList.add("cursor-on");
+  }
+
+  /* -------- Animation signature du Hero au chargement --------
+     Le mot ABONÉ apparaît, puis une fine ligne lumineuse « de coupe »
+     traverse l'écran et révèle le reste du Hero. Le texte n'est pas
+     modifié ; l'état final du Hero est strictement identique.            */
+  function initHeroIntro() {
+    var hero = document.querySelector(".hero");
+    if (!hero) return;
+    var h1 = hero.querySelector(".hero-title");
+    var sub = h1 ? h1.querySelector("span") : null;
+    var word = null;
+
+    if (h1) {
+      var big = "";
+      Array.prototype.forEach.call(h1.childNodes, function (n) { if (n.nodeType === 3) big += n.nodeValue; });
+      big = big.trim();
+      if (big) {
+        Array.prototype.slice.call(h1.childNodes).forEach(function (n) { if (n.nodeType === 3) h1.removeChild(n); });
+        word = document.createElement("span");
+        word.className = "hero-word";
+        word.textContent = big;
+        h1.insertBefore(word, sub || null);
+      }
+      h1.classList.remove("reveal");
+    }
+
+    // sortir les éléments du Hero du système .reveal (l'intro les pilote)
+    Array.prototype.forEach.call(hero.querySelectorAll(".reveal"), function (el) { el.classList.remove("reveal"); });
+
+    if (prefersReduced) return;   // affichage statique immédiat
+
+    var isMobile = window.matchMedia && matchMedia("(max-width: 560px)").matches;
+    var canHover = window.matchMedia && matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    // couches d'effet
+    var bgfx = document.createElement("div"); bgfx.className = "hero-bgfx";
+    var cursor = document.createElement("div"); cursor.className = "hero-cursor";
+    bgfx.appendChild(cursor); hero.insertBefore(bgfx, hero.firstChild);
+
+    var topfx = document.createElement("div"); topfx.className = "hero-topfx";
+    var line = document.createElement("div"); line.className = "hero-scanline";
+    topfx.appendChild(line); hero.appendChild(topfx);
+
+    function anim(el, name, dur, delay) {
+      if (!el) return;
+      el.style.animation = name + " " + dur + "ms cubic-bezier(.4,0,.2,1) " + delay + "ms both";
+    }
+    anim(word, isMobile ? "heroWordSimple" : "heroWord", 760, 150);
+    anim(hero.querySelector(".hero-kicker"), "heroReveal", 700, 560);
+    anim(sub, "heroReveal", 700, 640);
+    anim(hero.querySelector(".hero-lead"), "heroReveal", 700, 780);
+    anim(hero.querySelector(".hero-cta"), "heroReveal", 700, 940);
+    anim(hero.querySelector(".hero-strip"), "heroReveal", 700, 1050);
+    anim(hero.querySelector(".hero-visual"), "heroReveal", 800, 1080);
+
+    window.setTimeout(function () {
+      if (topfx && topfx.parentNode) { topfx.parentNode.removeChild(topfx); }
+      if (canHover && !isMobile) { initHeroCursor(hero, cursor); }
+      else if (bgfx && bgfx.parentNode) { bgfx.parentNode.removeChild(bgfx); }
+    }, 1750);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    initHeroIntro();
     initHeaderScroll();
     initMobileNav();
     initReveal();

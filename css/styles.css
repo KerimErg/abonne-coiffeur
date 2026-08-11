@@ -136,7 +136,7 @@ h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.05; }
 .hero-kicker .line { width: 34px; height: 1px; background: var(--copper); }
 .hero-title { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; margin: 0 0 1.6rem; line-height: .92; }
 .hero-title { font-size: clamp(3.2rem, 8vw, 6.6rem); color: #fff; display: flex; flex-direction: column; }
-.hero-title span { font-family: var(--font-body); font-weight: 500; font-size: clamp(1rem, 2.2vw, 1.7rem); letter-spacing: .42em; text-transform: uppercase; color: var(--copper); margin-top: .5rem; }
+.hero-title > span:last-child { font-family: var(--font-body); font-weight: 500; font-size: clamp(1rem, 2.2vw, 1.7rem); letter-spacing: .42em; text-transform: uppercase; color: var(--copper); margin-top: .5rem; }
 .hero-lead { font-size: clamp(1.05rem, 1.6vw, 1.24rem); color: rgba(245,243,238,.82); max-width: 46ch; margin: 0 0 2.2rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
 
@@ -300,6 +300,36 @@ h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.05; }
 a:focus-visible, button:focus-visible, .btn:focus-visible, iframe:focus-visible { outline: 2.5px solid var(--copper); outline-offset: 3px; border-radius: 6px; }
 
 /* ============================================================
+   Animation signature du Hero (« ligne de coupe » au chargement)
+   Ajoutée par js/main.js ; ne modifie pas l'état final du Hero.
+   ============================================================ */
+.hero-grid, .hero-strip { position: relative; z-index: 1; }
+/* couche lumière douce qui suit le curseur (derrière le contenu) */
+.hero-bgfx { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hero-cursor {
+  position: absolute; inset: -12%; opacity: 0; transition: opacity 1.4s ease; mix-blend-mode: screen;
+  background: radial-gradient(440px circle at var(--cx, 68%) var(--cy, 26%), rgba(212,190,158,.12), rgba(212,190,158,0) 60%);
+}
+.hero.cursor-on .hero-cursor { opacity: 1; }
+/* couche de la ligne lumineuse (au-dessus du contenu, sans bloquer les clics) */
+.hero-topfx { position: absolute; inset: 0; z-index: 7; overflow: hidden; pointer-events: none; }
+.hero-scanline {
+  position: absolute; top: -3%; bottom: -3%; left: -3%; width: 2px; opacity: 0;
+  background: linear-gradient(to bottom, transparent, rgba(185,138,94,.18), var(--copper) 42%, #efd3ad 50%, var(--copper) 58%, rgba(185,138,94,.18), transparent);
+  box-shadow: 0 0 22px 5px rgba(185,138,94,.42), 0 0 8px 1px rgba(239,211,173,.6);
+  animation: heroScan 1.2s cubic-bezier(.45,.02,.2,1) .42s both;
+}
+@keyframes heroScan { 0% { left: -3%; opacity: 0; } 9% { opacity: 1; } 86% { opacity: 1; } 100% { left: 103%; opacity: 0; } }
+@keyframes heroReveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes heroWord { from { opacity: 0; transform: scale(1.03); filter: blur(12px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes heroWordSimple { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 560px) {
+  .hero-cursor { display: none; }
+  .hero-scanline { box-shadow: 0 0 12px 3px rgba(185,138,94,.4); }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1000px) {
@@ -354,5 +384,9 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, iframe:focus-visible 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-scanline, .hero-bgfx { display: none !important; }
+  .hero-word, .hero-title > span:last-child, .hero-kicker, .hero-lead, .hero-cta, .hero-visual, .hero-strip {
+    animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important;
+  }
   * { transition-duration: .01ms !important; }
 }
